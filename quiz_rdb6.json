@@ -1,0 +1,799 @@
+{
+"title": "Directory Servers and LDAP Exam Review Quiz",
+"subtitle": "Concepts, syntax, and administration basics",
+"totalQuestions": 65,
+"questions": [
+{
+"question": "What is a directory server primarily optimized for?",
+"options": ["High-volume transactional writes", "Reading, browsing, and searching", "Storing large binary files", "Running ad hoc analytics queries"],
+"answerIndex": 1,
+"explanation": "Directory servers are designed for read-heavy access patterns and efficient searching.",
+"category": "Directory Fundamentals",
+"level": "Easy",
+"tags": ["directory-server", "read-heavy", "search"]
+},
+{
+"question": "Which data structure best describes a directory information tree?",
+"options": ["Flat list", "Graph with cycles", "Hierarchical tree", "Circular queue"],
+"answerIndex": 2,
+"explanation": "A DIT is hierarchical, organized as a tree of entries.",
+"category": "Directory Fundamentals",
+"level": "Easy",
+"tags": ["DIT", "hierarchy", "tree"]
+},
+{
+"question": "Which use case is most associated with LDAP directory services?",
+"options": ["Video encoding", "Identity management", "Image compression", "Message brokering"],
+"answerIndex": 1,
+"explanation": "LDAP directories are commonly used for identity, authentication, and authorization.",
+"category": "Directory Fundamentals",
+"level": "Easy",
+"tags": ["LDAP", "identity-management", "authentication"]
+},
+{
+"question": "Compared with a relational database, a directory server is generally optimized for which workload?",
+"options": ["Balanced read/write workloads", "Read-heavy workloads", "Write-only workloads", "Bulk data import only"],
+"answerIndex": 1,
+"explanation": "Directory servers prioritize fast reads and searches over frequent writes.",
+"category": "Directory vs Database",
+"level": "Medium",
+"tags": ["database-vs-directory", "performance", "reads"]
+},
+{
+"question": "Which query language is associated with directory servers in the lecture material?",
+"options": ["SQL", "LDAP filters", "SPARQL", "GraphQL"],
+"answerIndex": 1,
+"explanation": "LDAP search filters are used to query directory entries.",
+"category": "Directory vs Database",
+"level": "Easy",
+"tags": ["LDAP-filters", "query-language", "search"]
+},
+{
+"question": "Which statement best describes transaction support in directory servers compared with relational databases?",
+"options": ["Directory servers always provide full ACID transactions", "Directory servers have limited or no transactions", "Directory servers require distributed SQL", "Directory servers only support rollback"],
+"answerIndex": 1,
+"explanation": "The lecture contrasts directories with relational databases by noting limited or no transaction support.",
+"category": "Directory vs Database",
+"level": "Medium",
+"tags": ["transactions", "ACID", "directory-server"]
+},
+{
+"question": "What does LDAP stand for?",
+"options": ["Lightweight Directory Access Protocol", "Local Data Authorization Protocol", "Logical Directory Application Process", "Linked Directory Authentication Platform"],
+"answerIndex": 0,
+"explanation": "LDAP stands for Lightweight Directory Access Protocol.",
+"category": "LDAP Protocol",
+"level": "Easy",
+"tags": ["LDAP", "acronym", "protocol"]
+},
+{
+"question": "On which transport does LDAP commonly operate?",
+"options": ["Only UDP", "TCP/IP", "ICMP", "Bluetooth"],
+"answerIndex": 1,
+"explanation": "LDAP runs over TCP/IP, typically on port 389 or 636 for LDAPS.",
+"category": "LDAP Protocol",
+"level": "Easy",
+"tags": ["TCP", "port-389", "port-636"]
+},
+{
+"question": "Which port is commonly used for standard LDAP?",
+"options": ["25", "389", "443", "8080"],
+"answerIndex": 1,
+"explanation": "Port 389 is the standard LDAP port.",
+"category": "LDAP Protocol",
+"level": "Easy",
+"tags": ["LDAP", "port", "networking"]
+},
+{
+"question": "Which port is commonly associated with LDAPS?",
+"options": ["636", "1389", "3268", "53"],
+"answerIndex": 0,
+"explanation": "LDAPS uses port 636.",
+"category": "LDAP Protocol",
+"level": "Easy",
+"tags": ["LDAPS", "port-636", "TLS"]
+},
+{
+"question": "Which operation in LDAP is used to authenticate to the directory?",
+"options": ["Bind", "Compare", "Search", "Modify DN"],
+"answerIndex": 0,
+"explanation": "Bind is the LDAP operation for authentication.",
+"category": "LDAP Operations",
+"level": "Easy",
+"tags": ["bind", "authentication", "LDAP"]
+},
+{
+"question": "Which LDAP operation closes the connection?",
+"options": ["Unbind", "Delete", "Search", "Add"],
+"answerIndex": 0,
+"explanation": "Unbind terminates the LDAP session.",
+"category": "LDAP Operations",
+"level": "Easy",
+"tags": ["unbind", "connection", "LDAP"]
+},
+{
+"question": "Which LDAP operation is used to create a new entry?",
+"options": ["Add", "Modify", "Compare", "Search"],
+"answerIndex": 0,
+"explanation": "Add creates new directory entries.",
+"category": "LDAP Operations",
+"level": "Easy",
+"tags": ["add", "entry-creation", "LDAP"]
+},
+{
+"question": "Which LDAP operation is used to rename or move an entry?",
+"options": ["Modify DN", "Compare", "Bind", "Unbind"],
+"answerIndex": 0,
+"explanation": "Modify DN changes the entry's relative distinguished name or location.",
+"category": "LDAP Operations",
+"level": "Medium",
+"tags": ["modify-dn", "rename", "move-entry"]
+},
+{
+"question": "What does a Distinguished Name (DN) uniquely identify?",
+"options": ["A server instance", "An entry in the directory", "A network port", "A schema file"],
+"answerIndex": 1,
+"explanation": "A DN uniquely identifies a specific directory entry.",
+"category": "DN and RDN",
+"level": "Easy",
+"tags": ["DN", "entry", "identity"]
+},
+{
+"question": "How is a DN read according to the lecture?",
+"options": ["Right to left, least specific to most specific", "Left to right, most specific to least specific", "Top to bottom, root first", "Randomly depending on schema"],
+"answerIndex": 1,
+"explanation": "The lecture states that DN components are read from left to right, from most specific to least specific.",
+"category": "DN and RDN",
+"level": "Medium",
+"tags": ["DN", "ordering", "hierarchy"]
+},
+{
+"question": "What is the Relative Distinguished Name (RDN)?",
+"options": ["The entire base DN", "The leftmost component of a DN", "The server hostname", "A group membership attribute"],
+"answerIndex": 1,
+"explanation": "The RDN is the leftmost component and identifies the entry within its parent.",
+"category": "DN and RDN",
+"level": "Easy",
+"tags": ["RDN", "DN", "relative-name"]
+},
+{
+"question": "What must an RDN be among siblings?",
+"options": ["Encrypted", "Globally unique", "Unique among siblings", "Numeric only"],
+"answerIndex": 2,
+"explanation": "An RDN must be unique within its parent container's children.",
+"category": "DN and RDN",
+"level": "Medium",
+"tags": ["RDN", "uniqueness", "siblings"]
+},
+{
+"question": "Which abbreviation stands for Domain Component in a DN?",
+"options": ["DC", "DU", "DN", "DP"],
+"answerIndex": 0,
+"explanation": "DC means Domain Component.",
+"category": "DN Components",
+"level": "Easy",
+"tags": ["DC", "DN-components", "domain"]
+},
+{
+"question": "Which abbreviation represents an Organizational Unit?",
+"options": ["CN", "OU", "UID", "DC"],
+"answerIndex": 1,
+"explanation": "OU stands for Organizational Unit.",
+"category": "DN Components",
+"level": "Easy",
+"tags": ["OU", "organizational-unit", "DN"]
+},
+{
+"question": "Which abbreviation represents Common Name?",
+"options": ["C", "CN", "O", "UID"],
+"answerIndex": 1,
+"explanation": "CN stands for Common Name.",
+"category": "DN Components",
+"level": "Easy",
+"tags": ["CN", "common-name", "DN"]
+},
+{
+"question": "Which abbreviation is used for User ID in a DN context?",
+"options": ["UID", "U", "ID", "USR"],
+"answerIndex": 0,
+"explanation": "UID is the abbreviation for User ID.",
+"category": "DN Components",
+"level": "Easy",
+"tags": ["UID", "user-id", "DN"]
+},
+{
+"question": "Which abbreviation denotes Country in DN components?",
+"options": ["CT", "CO", "C", "CN"],
+"answerIndex": 2,
+"explanation": "C stands for Country.",
+"category": "DN Components",
+"level": "Easy",
+"tags": ["C", "country", "DN"]
+},
+{
+"question": "What is the primary role of object classes in LDAP?",
+"options": ["Define the physical server location", "Define the type of entry and allowed or required attributes", "Encrypt the directory contents", "Determine the search scope"],
+"answerIndex": 1,
+"explanation": "Object classes define entry types and the attributes they may require or allow.",
+"category": "Schema and Object Classes",
+"level": "Medium",
+"tags": ["object-class", "schema", "attributes"]
+},
+{
+"question": "How many object classes can an LDAP entry have?",
+"options": ["Exactly one", "At most two", "Multiple object classes", "None"],
+"answerIndex": 2,
+"explanation": "An LDAP entry can have multiple object classes.",
+"category": "Schema and Object Classes",
+"level": "Easy",
+"tags": ["object-class", "schema", "entry"]
+},
+{
+"question": "Which of the following is one of the three object class types mentioned in the lecture?",
+"options": ["Canonical", "Structural", "Relational", "Transactional"],
+"answerIndex": 1,
+"explanation": "The lecture lists Structural, Auxiliary, and Abstract object classes.",
+"category": "Schema and Object Classes",
+"level": "Easy",
+"tags": ["structural", "object-class", "schema"]
+},
+{
+"question": "Which object class is commonly used for Internet or intranet users?",
+"options": ["groupOfNames", "organizationalUnit", "inetOrgPerson", "organization"],
+"answerIndex": 2,
+"explanation": "inetOrgPerson is used for user entries.",
+"category": "Schema and Object Classes",
+"level": "Easy",
+"tags": ["inetOrgPerson", "users", "schema"]
+},
+{
+"question": "Which object class is typically used for departments or divisions?",
+"options": ["organizationalUnit", "posixAccount", "groupOfUniqueNames", "person"],
+"answerIndex": 0,
+"explanation": "organizationalUnit is used for departments and divisions.",
+"category": "Schema and Object Classes",
+"level": "Easy",
+"tags": ["organizationalUnit", "OU", "departments"]
+},
+{
+"question": "Which object class is used for groups with members?",
+"options": ["organization", "groupOfNames", "inetOrgPerson", "posixAccount"],
+"answerIndex": 1,
+"explanation": "groupOfNames is intended for groups with member entries.",
+"category": "Groups and Membership",
+"level": "Easy",
+"tags": ["groupOfNames", "membership", "groups"]
+},
+{
+"question": "Which object class is associated with Unix or Linux accounts?",
+"options": ["posixAccount", "groupOfNames", "organization", "country"],
+"answerIndex": 0,
+"explanation": "posixAccount is used for Unix/Linux account entries.",
+"category": "Schema and Object Classes",
+"level": "Easy",
+"tags": ["posixAccount", "unix", "accounts"]
+},
+{
+"question": "What does an LDAP attribute represent?",
+"options": ["The server's replication mode", "The actual data stored for an entry", "The DN's parent entry", "A search base only"],
+"answerIndex": 1,
+"explanation": "Attributes store the actual values for entries.",
+"category": "LDAP Attributes",
+"level": "Easy",
+"tags": ["attributes", "data", "entry"]
+},
+{
+"question": "How are LDAP attributes defined?",
+"options": ["By SQL constraints", "By the schema", "By DNS records", "By the operating system kernel"],
+"answerIndex": 1,
+"explanation": "The schema determines which attributes are required or optional.",
+"category": "LDAP Attributes",
+"level": "Medium",
+"tags": ["schema", "attributes", "requirements"]
+},
+{
+"question": "Which attribute is required for inetOrgPerson according to the lecture examples?",
+"options": ["sn", "telephoneNumber", "mail", "memberOf"],
+"answerIndex": 0,
+"explanation": "sn is listed as a required attribute for inetOrgPerson.",
+"category": "LDAP Attributes",
+"level": "Medium",
+"tags": ["inetOrgPerson", "sn", "required-attribute"]
+},
+{
+"question": "Which attribute typically stores the user's email address?",
+"options": ["mail", "uid", "cn", "sn"],
+"answerIndex": 0,
+"explanation": "mail is the standard attribute for email addresses.",
+"category": "LDAP Attributes",
+"level": "Easy",
+"tags": ["mail", "email", "attribute"]
+},
+{
+"question": "Which attribute commonly stores a user's first name in the lecture example?",
+"options": ["sn", "cn", "givenName", "uid"],
+"answerIndex": 2,
+"explanation": "givenName stores the given or first name.",
+"category": "LDAP Attributes",
+"level": "Easy",
+"tags": ["givenName", "first-name", "attribute"]
+},
+{
+"question": "Which attribute is commonly used for a login identifier in LDAP examples?",
+"options": ["uid", "sn", "mail", "cn"],
+"answerIndex": 0,
+"explanation": "uid is commonly used as the user login identifier.",
+"category": "LDAP Attributes",
+"level": "Easy",
+"tags": ["uid", "login", "user-id"]
+},
+{
+"question": "Which attribute in the examples stores a hashed password?",
+"options": ["userPassword", "telephoneNumber", "memberOf", "cn"],
+"answerIndex": 0,
+"explanation": "userPassword stores the password value, typically hashed.",
+"category": "LDAP Attributes",
+"level": "Medium",
+"tags": ["userPassword", "hashing", "security"]
+},
+{
+"question": "What does LDIF stand for?",
+"options": ["Lightweight Directory Interchange Format", "LDAP Data Interchange Format", "Local Directory Import File", "Linked Data Identity Format"],
+"answerIndex": 1,
+"explanation": "LDIF stands for LDAP Data Interchange Format.",
+"category": "LDIF",
+"level": "Easy",
+"tags": ["LDIF", "acronym", "format"]
+},
+{
+"question": "What is LDIF primarily used for?",
+"options": ["Storing binary logs", "Importing, exporting, and modifying directory data", "Executing SQL joins", "Managing DNS zones"],
+"answerIndex": 1,
+"explanation": "LDIF is the text format used for directory data exchange and modification.",
+"category": "LDIF",
+"level": "Easy",
+"tags": ["LDIF", "import", "export"]
+},
+{
+"question": "Which statement best describes LDIF?",
+"options": ["It is a binary-only protocol", "It is a human-readable text format", "It is a compression algorithm", "It is a TLS certificate format"],
+"answerIndex": 1,
+"explanation": "LDIF is text-based and easy to edit.",
+"category": "LDIF",
+"level": "Easy",
+"tags": ["LDIF", "text-format", "human-readable"]
+},
+{
+"question": "Which LDAP filter matches entries where the uid equals jdoe?",
+"options": ["(uid=jdoe)", "(uid:=jdoe)", "(uid!=jdoe)", "(uid=jdoe*)"],
+"answerIndex": 0,
+"explanation": "Equality filters use the format (attribute=value).",
+"category": "LDAP Search Filters",
+"level": "Easy",
+"tags": ["filter", "equality", "uid"]
+},
+{
+"question": "Which LDAP filter checks whether the mail attribute exists?",
+"options": ["(mail=)", "(mail=)", "(mail!=)", "(mail?)"],
+"answerIndex": 1,
+"explanation": "Presence filters use an asterisk as the value.",
+"category": "LDAP Search Filters",
+"level": "Easy",
+"tags": ["presence-filter", "mail", "wildcard"]
+},
+{
+"question": "Which LDAP filter matches common names beginning with John?",
+"options": ["(cn=John)", "(cn=John)", "(cn=John?)", "(cn=John)"],
+"answerIndex": 0,
+"explanation": "A trailing asterisk is used for prefix matching.",
+"category": "LDAP Search Filters",
+"level": "Easy",
+"tags": ["wildcard", "cn", "prefix-match"]
+},
+{
+"question": "What operator starts an AND LDAP filter?",
+"options": ["|", "&", "!", "="],
+"answerIndex": 1,
+"explanation": "AND filters use the & operator in prefix notation.",
+"category": "LDAP Search Filters",
+"level": "Medium",
+"tags": ["AND", "prefix-notation", "filter"]
+},
+{
+"question": "What operator starts an OR LDAP filter?",
+"options": ["&", "|", "!", "~"],
+"answerIndex": 1,
+"explanation": "OR filters use the | operator in prefix notation.",
+"category": "LDAP Search Filters",
+"level": "Medium",
+"tags": ["OR", "prefix-notation", "filter"]
+},
+{
+"question": "What operator starts a NOT LDAP filter?",
+"options": ["&", "|", "!", "^"],
+"answerIndex": 2,
+"explanation": "NOT filters use the ! operator.",
+"category": "LDAP Search Filters",
+"level": "Medium",
+"tags": ["NOT", "negation", "filter"]
+},
+{
+"question": "Which search scope returns only the base entry itself?",
+"options": ["one", "base", "sub", "tree"],
+"answerIndex": 1,
+"explanation": "Base scope searches only the specified base entry.",
+"category": "Search Scope",
+"level": "Easy",
+"tags": ["scope", "base", "search"]
+},
+{
+"question": "Which search scope returns direct children of the base entry?",
+"options": ["base", "one", "sub", "all"],
+"answerIndex": 1,
+"explanation": "One-level scope searches only direct children.",
+"category": "Search Scope",
+"level": "Easy",
+"tags": ["scope", "one-level", "search"]
+},
+{
+"question": "Which search scope includes the base entry and all descendants?",
+"options": ["base", "one", "sub", "local"],
+"answerIndex": 2,
+"explanation": "Subtree scope searches the base entry and all entries below it.",
+"category": "Search Scope",
+"level": "Easy",
+"tags": ["scope", "subtree", "search"]
+},
+{
+"question": "What is the most common search scope used in ldapsearch examples?",
+"options": ["base", "one", "sub", "none"],
+"answerIndex": 2,
+"explanation": "Subtree search is the most common because it searches recursively.",
+"category": "Search Scope",
+"level": "Medium",
+"tags": ["ldapsearch", "sub", "scope"]
+},
+{
+"question": "Which ldapsearch option specifies the base DN?",
+"options": ["-D", "-b", "-H", "-W"],
+"answerIndex": 1,
+"explanation": "The -b option sets the search base DN.",
+"category": "Command Line Tools",
+"level": "Medium",
+"tags": ["ldapsearch", "base-DN", "options"]
+},
+{
+"question": "Which ldapsearch option specifies the LDAP URI?",
+"options": ["-D", "-H", "-x", "-f"],
+"answerIndex": 1,
+"explanation": "The -H option specifies the LDAP host URI.",
+"category": "Command Line Tools",
+"level": "Medium",
+"tags": ["ldapsearch", "URI", "options"]
+},
+{
+"question": "Which ldapsearch option requests simple authentication mode?",
+"options": ["-W", "-x", "-b", "-s"],
+"answerIndex": 1,
+"explanation": "The -x option requests simple authentication instead of SASL.",
+"category": "Command Line Tools",
+"level": "Medium",
+"tags": ["ldapsearch", "simple-bind", "options"]
+},
+{
+"question": "Which ldapsearch option prompts for the bind password?",
+"options": ["-D", "-W", "-b", "-H"],
+"answerIndex": 1,
+"explanation": "The -W option prompts for the password.",
+"category": "Command Line Tools",
+"level": "Medium",
+"tags": ["ldapsearch", "password", "-W"]
+},
+{
+"question": "Which command is used to add entries from an LDIF file?",
+"options": ["ldapmodify", "ldapadd", "ldapdelete", "ldapsearch"],
+"answerIndex": 1,
+"explanation": "ldapadd imports new entries from LDIF.",
+"category": "Command Line Tools",
+"level": "Easy",
+"tags": ["ldapadd", "LDIF", "import"]
+},
+{
+"question": "Which command is used to modify an existing LDAP entry?",
+"options": ["ldapsearch", "ldapmodify", "ldapadd", "ldapcompare"],
+"answerIndex": 1,
+"explanation": "ldapmodify is used to change entry attributes.",
+"category": "Command Line Tools",
+"level": "Easy",
+"tags": ["ldapmodify", "update", "entry"]
+},
+{
+"question": "Which command is used to delete an LDAP entry?",
+"options": ["ldapdelete", "ldapremove", "ldapdrop", "ldapclear"],
+"answerIndex": 0,
+"explanation": "ldapdelete removes an entry from the directory.",
+"category": "Command Line Tools",
+"level": "Easy",
+"tags": ["ldapdelete", "remove", "entry"]
+},
+{
+"question": "In an ldapmodify operation, which keyword introduces the type of change?",
+"options": ["changetype", "modifytype", "changemode", "optype"],
+"answerIndex": 0,
+"explanation": "changetype: modify identifies the modification operation.",
+"category": "Command Line Tools",
+"level": "Medium",
+"tags": ["ldapmodify", "changetype", "LDIF"]
+},
+{
+"question": "Which line in an ldapmodify request indicates a new attribute value should replace the old one?",
+"options": ["replace:", "swap:", "update:", "set:"],
+"answerIndex": 0,
+"explanation": "The replace directive tells LDAP to replace the current value.",
+"category": "Command Line Tools",
+"level": "Medium",
+"tags": ["ldapmodify", "replace", "attribute"]
+},
+{
+"question": "What is required for a bind using a simple DN and password?",
+"options": ["A Kerberos ticket", "A DN and password", "A certificate only", "A schema export"],
+"answerIndex": 1,
+"explanation": "Simple bind uses a distinguished name and password.",
+"category": "Authentication and Security",
+"level": "Easy",
+"tags": ["simple-bind", "DN", "password"]
+},
+{
+"question": "Why should simple bind not be used without TLS?",
+"options": ["Because it breaks group membership", "Because the password may be sent in cleartext", "Because it requires LDIF", "Because it disables search filters"],
+"answerIndex": 1,
+"explanation": "Simple bind credentials must be protected by TLS or LDAPS.",
+"category": "Authentication and Security",
+"level": "Medium",
+"tags": ["TLS", "cleartext", "security"]
+},
+{
+"question": "Which bind type is associated with advanced mechanisms such as Kerberos?",
+"options": ["Anonymous bind", "Simple bind", "SASL bind", "Modify bind"],
+"answerIndex": 2,
+"explanation": "SASL supports advanced authentication mechanisms, including Kerberos.",
+"category": "Authentication and Security",
+"level": "Medium",
+"tags": ["SASL", "Kerberos", "authentication"]
+},
+{
+"question": "Which is a recommended transport security practice for LDAP?",
+"options": ["Use plain LDAP for passwords", "Use LDAPS or StartTLS", "Disable certificates", "Avoid encryption for internal networks"],
+"answerIndex": 1,
+"explanation": "The lecture recommends LDAPS or StartTLS for transport security.",
+"category": "Authentication and Security",
+"level": "Easy",
+"tags": ["LDAPS", "StartTLS", "security"]
+},
+{
+"question": "What is the purpose of access control lists in LDAP?",
+"options": ["To compress directory data", "To implement access restrictions", "To convert LDIF to JSON", "To rename entries automatically"],
+"answerIndex": 1,
+"explanation": "ACLs enforce who can read or modify directory data.",
+"category": "Authentication and Security",
+"level": "Medium",
+"tags": ["ACL", "authorization", "access-control"]
+},
+{
+"question": "What password storage approach is recommended in the lecture?",
+"options": ["Plaintext passwords", "Hashed passwords", "Base64 only", "Encrypted DNs"],
+"answerIndex": 1,
+"explanation": "Passwords should be stored using hashes such as {SSHA} or {PBKDF2}.",
+"category": "Authentication and Security",
+"level": "Easy",
+"tags": ["password-hashing", "SSHA", "PBKDF2"]
+},
+{
+"question": "Which of the following is mentioned as a password policy measure?",
+"options": ["Complexity and expiration", "Color and font size", "IP whitelisting only", "File compression"],
+"answerIndex": 0,
+"explanation": "The lecture recommends password complexity and expiration policies.",
+"category": "Authentication and Security",
+"level": "Easy",
+"tags": ["password-policy", "expiration", "complexity"]
+},
+{
+"question": "Which directory service is built on LDAP and integrates with Windows domain authentication?",
+"options": ["OpenLDAP only", "Apache Directory Server", "Microsoft Active Directory", "389 Directory Server"],
+"answerIndex": 2,
+"explanation": "Microsoft Active Directory is an enterprise directory service built on LDAP.",
+"category": "Active Directory",
+"level": "Easy",
+"tags": ["Active-Directory", "Windows", "LDAP"]
+},
+{
+"question": "Which of the following is an Active Directory-specific attribute mentioned in the lecture?",
+"options": ["sAMAccountName", "uidNumber", "homeDirectory", "givenName"],
+"answerIndex": 0,
+"explanation": "sAMAccountName is an AD-specific login attribute.",
+"category": "Active Directory",
+"level": "Medium",
+"tags": ["Active-Directory", "sAMAccountName", "attribute"]
+},
+{
+"question": "Which AD attribute often represents the user principal name?",
+"options": ["userPrincipalName", "objectSid", "memberOf", "distinguishedName"],
+"answerIndex": 0,
+"explanation": "userPrincipalName stores the login in UPN format.",
+"category": "Active Directory",
+"level": "Medium",
+"tags": ["Active-Directory", "UPN", "userPrincipalName"]
+},
+{
+"question": "Which attribute stores the full distinguished name in Active Directory?",
+"options": ["distinguishedName", "objectGUID", "objectSid", "sAMAccountName"],
+"answerIndex": 0,
+"explanation": "distinguishedName contains the object's full DN in AD.",
+"category": "Active Directory",
+"level": "Medium",
+"tags": ["Active-Directory", "DN", "distinguishedName"]
+},
+{
+"question": "Which AD attribute is a unique identifier represented as a GUID?",
+"options": ["objectGUID", "objectSid", "memberOf", "cn"],
+"answerIndex": 0,
+"explanation": "objectGUID is the unique global identifier.",
+"category": "Active Directory",
+"level": "Medium",
+"tags": ["Active-Directory", "GUID", "objectGUID"]
+},
+{
+"question": "Which AD attribute stores the security identifier?",
+"options": ["objectSid", "objectGUID", "userPassword", "mail"],
+"answerIndex": 0,
+"explanation": "objectSid stores the security identifier.",
+"category": "Active Directory",
+"level": "Medium",
+"tags": ["Active-Directory", "SID", "objectSid"]
+},
+{
+"question": "Which command retrieves all entries under a base DN using ldapsearch?",
+"options": ["ldapsearch -x -b \"dc=example,dc=com\" \"(objectClass=)\"", "ldapadd -f all.ldif", "ldapmodify -b \"dc=example,dc=com\"", "ldapdelete -x \"(objectClass=)\""],
+"answerIndex": 0,
+"explanation": "A subtree search with (objectClass=) returns all entries under the base DN.",
+"category": "Command Line Tools",
+"level": "Medium",
+"tags": ["ldapsearch", "base-DN", "objectClass"]
+},
+{
+"question": "Which ldapsearch command would be most appropriate to find a specific user by uid?",
+"options": ["ldapsearch -x -b \"ou=People,dc=example,dc=com\" \"(uid=jdoe)\"", "ldapsearch -x -b \"ou=People\" \"(cn=*)\"", "ldapadd -x -b \"ou=People\" \"(uid=jdoe)\"", "ldapmodify -x -b \"ou=People\" \"(uid=jdoe)\""],
+"answerIndex": 0,
+"explanation": "Searching the People OU with a uid filter is the correct approach.",
+"category": "Command Line Tools",
+"level": "Medium",
+"tags": ["ldapsearch", "uid", "People"]
+},
+{
+"question": "What does groupOfUniqueNames help prevent?",
+"options": ["Duplicate members", "Duplicate attributes on the server", "Duplicate ports", "Duplicate schema files"],
+"answerIndex": 0,
+"explanation": "groupOfUniqueNames is used for stricter membership control and prevents duplicate members.",
+"category": "Groups and Membership",
+"level": "Medium",
+"tags": ["groupOfUniqueNames", "membership", "duplicates"]
+},
+{
+"question": "What is a key requirement of groupOfNames?",
+"options": ["It must have at least one member", "It must have exactly two members", "It requires a password", "It cannot contain CN"],
+"answerIndex": 0,
+"explanation": "groupOfNames requires at least one member entry.",
+"category": "Groups and Membership",
+"level": "Medium",
+"tags": ["groupOfNames", "member", "requirement"]
+},
+{
+"question": "Which LDAP attribute is used to list members in a groupOfNames entry?",
+"options": ["member", "uniqueMember", "memberOf", "groupMember"],
+"answerIndex": 0,
+"explanation": "groupOfNames uses the member attribute.",
+"category": "Groups and Membership",
+"level": "Medium",
+"tags": ["groupOfNames", "member", "groups"]
+},
+{
+"question": "Which LDAP attribute is used for membership in a groupOfUniqueNames entry?",
+"options": ["memberOf", "uniqueMember", "member", "uid"],
+"answerIndex": 1,
+"explanation": "groupOfUniqueNames uses uniqueMember.",
+"category": "Groups and Membership",
+"level": "Medium",
+"tags": ["groupOfUniqueNames", "uniqueMember", "groups"]
+},
+{
+"question": "Which is a real-world application of LDAP mentioned in the lecture?",
+"options": ["SSH authentication", "GPU rendering", "Video transcoding", "Static site generation"],
+"answerIndex": 0,
+"explanation": "LDAP can support centralized SSH authentication with tools like SSSD.",
+"category": "Practical Applications",
+"level": "Easy",
+"tags": ["SSH", "LDAP", "authentication"]
+},
+{
+"question": "Which application is listed as using LDAP for authentication in web systems?",
+"options": ["Spring Security LDAP", "TensorFlow Serving", "Nginx caching", "Redis clustering"],
+"answerIndex": 0,
+"explanation": "Spring Security LDAP is explicitly listed as a web application use case.",
+"category": "Practical Applications",
+"level": "Easy",
+"tags": ["Spring Security", "web-app", "LDAP"]
+},
+{
+"question": "Which of the following is mentioned as an email-related LDAP use case?",
+"options": ["Address book and routing", "Image indexing", "File system encryption", "Compiler optimization"],
+"answerIndex": 0,
+"explanation": "The lecture lists email systems such as Postfix and Dovecot.",
+"category": "Practical Applications",
+"level": "Easy",
+"tags": ["email", "Postfix", "Dovecot"]
+},
+{
+"question": "Which tool is a GUI for managing LDAP directories?",
+"options": ["Apache Directory Studio", "Wireshark", "Postman", "JMeter"],
+"answerIndex": 0,
+"explanation": "Apache Directory Studio is a graphical LDAP management tool.",
+"category": "Administration Tools",
+"level": "Easy",
+"tags": ["Directory-Studio", "GUI", "LDAP"]
+},
+{
+"question": "Which hostname is commonly used in the Apache Directory Studio example connection settings?",
+"options": ["localhost", "example.com", "ldap.internal", "127.0.0.1:636"],
+"answerIndex": 0,
+"explanation": "The lecture shows localhost as the hostname.",
+"category": "Administration Tools",
+"level": "Easy",
+"tags": ["Directory-Studio", "hostname", "connection"]
+},
+{
+"question": "Which bind DN is shown for ApacheDS in the lecture?",
+"options": ["uid=admin,ou=system", "cn=admin,dc=example,dc=com", "ou=People,dc=example,dc=com", "uid=jdoe,ou=People,dc=example,dc=com"],
+"answerIndex": 0,
+"explanation": "The example uses uid=admin,ou=system as the bind DN.",
+"category": "Administration Tools",
+"level": "Medium",
+"tags": ["ApacheDS", "bind-DN", "admin"]
+},
+{
+"question": "Which password is shown in the Apache Directory Studio connection example?",
+"options": ["secret", "admin123", "password", "ldap"],
+"answerIndex": 0,
+"explanation": "The example uses secret as the password.",
+"category": "Administration Tools",
+"level": "Easy",
+"tags": ["Directory-Studio", "password", "example"]
+},
+{
+"question": "What port does the ApacheDS Docker example expose?",
+"options": ["10389", "389", "636", "8081"],
+"answerIndex": 0,
+"explanation": "The Docker example maps port 10389.",
+"category": "Administration Tools",
+"level": "Medium",
+"tags": ["ApacheDS", "Docker", "port-10389"]
+},
+{
+"question": "Which command starts the ApacheDS Docker container in the lecture example?",
+"options": ["docker-compose up -d", "docker run apacheds --start", "systemctl start ldap", "service ldap restart"],
+"answerIndex": 0,
+"explanation": "The example uses docker-compose up -d.",
+"category": "Administration Tools",
+"level": "Easy",
+"tags": ["Docker", "ApacheDS", "compose"]
+},
+{
+"question": "What does the lecture recommend for production LDAP traffic?",
+"options": ["Disable TLS for speed", "Use TLS or SSL", "Use only anonymous bind", "Store passwords in LDIF"],
+"answerIndex": 1,
+"explanation": "The summary explicitly says to always use TLS/SSL in production.",
+"category": "Authentication and Security",
+"level": "Easy",
+"tags": ["production", "TLS", "SSL"]
+}
+]
+}

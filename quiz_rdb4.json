@@ -1,0 +1,1015 @@
+{
+"title": "Database Aggregations, Grouping, Window Functions, and CTEs Quiz",
+"subtitle": "Exam review questions on SQL aggregation, grouping, filtering, windows, and CTEs",
+"totalQuestions": 65,
+"questions": [
+{
+"question": "What is the main purpose of SQL aggregation queries?",
+"options": [
+"To return every row unchanged",
+"To summarize data into meaningful metrics",
+"To rename tables in a database",
+"To remove all duplicates automatically"
+],
+"answerIndex": 1,
+"explanation": "Aggregation queries compute summaries such as counts, sums, and averages.",
+"category": "Aggregation Basics",
+"level": "Easy",
+"tags": ["aggregation", "summary", "SQL"]
+},
+{
+"question": "Which of the following is a valid aggregation function mentioned in the lecture?",
+"options": [
+"count()",
+"search()",
+"group()",
+"filter()"
+],
+"answerIndex": 0,
+"explanation": "count() is a standard SQL aggregate function used to count rows.",
+"category": "Aggregation Basics",
+"level": "Easy",
+"tags": ["count", "aggregate", "functions"]
+},
+{
+"question": "What kind of result does a simple aggregation query typically return?",
+"options": [
+"Many rows and many columns",
+"One row and one column",
+"One table with many joins",
+"A full database schema"
+],
+"answerIndex": 1,
+"explanation": "A simple aggregation without grouping usually returns a single value.",
+"category": "Aggregation Basics",
+"level": "Easy",
+"tags": ["result shape", "aggregation", "projection"]
+},
+{
+"question": "Which SQL clause should be used to filter rows before aggregation?",
+"options": [
+"WHERE",
+"HAVING",
+"GROUP BY",
+"ORDER BY"
+],
+"answerIndex": 0,
+"explanation": "WHERE filters rows before grouping and aggregation happen.",
+"category": "Filtering",
+"level": "Easy",
+"tags": ["WHERE", "filtering", "aggregation"]
+},
+{
+"question": "Which SQL clause is used to filter groups after aggregation?",
+"options": [
+"WHERE",
+"HAVING",
+"SELECT",
+"FROM"
+],
+"answerIndex": 1,
+"explanation": "HAVING filters grouped results after the GROUP BY step.",
+"category": "Filtering",
+"level": "Easy",
+"tags": ["HAVING", "groups", "aggregation"]
+},
+{
+"question": "What is the correct general processing order of SQL clauses shown in the lecture?",
+"options": [
+"SELECT → FROM → WHERE → GROUP BY → HAVING → ORDER BY",
+"FROM → WHERE → GROUP BY → HAVING → SELECT → ORDER BY",
+"WHERE → FROM → GROUP BY → SELECT → HAVING → ORDER BY",
+"FROM → GROUP BY → WHERE → HAVING → SELECT → ORDER BY"
+],
+"answerIndex": 1,
+"explanation": "SQL is processed in the order FROM, WHERE, GROUP BY, HAVING, SELECT, ORDER BY.",
+"category": "Query Processing",
+"level": "Medium",
+"tags": ["query order", "WHERE", "HAVING"]
+},
+{
+"question": "Why can a column alias created in SELECT usually not be used in WHERE?",
+"options": [
+"WHERE is processed after SELECT",
+"WHERE is processed before SELECT",
+"Aliases are only allowed in subqueries",
+"Because aliases are not valid SQL"
+],
+"answerIndex": 1,
+"explanation": "WHERE is evaluated before SELECT, so the alias does not exist yet.",
+"category": "Query Processing",
+"level": "Medium",
+"tags": ["alias", "SELECT", "WHERE"]
+},
+{
+"question": "Why is HAVING often used instead of WHERE for aggregate conditions?",
+"options": [
+"HAVING can filter grouped rows after aggregation",
+"HAVING is faster in all cases",
+"WHERE cannot appear in SQL",
+"HAVING replaces GROUP BY"
+],
+"answerIndex": 0,
+"explanation": "HAVING is evaluated after grouping, so it can test aggregate values.",
+"category": "Filtering",
+"level": "Medium",
+"tags": ["HAVING", "aggregate condition", "GROUP BY"]
+},
+{
+"question": "Which of the following is valid syntax for counting all rows in a table?",
+"options": [
+"SELECT count() FROM facilities;",
+"SELECT count FROM facilities;",
+"SELECT total() FROM facilities;",
+"SELECT rows() FROM facilities;"
+],
+"answerIndex": 0,
+"explanation": "count() is the standard way to count rows in a table.",
+"category": "Aggregation Basics",
+"level": "Easy",
+"tags": ["count()", "syntax", "facilities"]
+},
+{
+"question": "What does GROUP BY do in a query?",
+"options": [
+"Sorts rows alphabetically",
+"Creates groups of rows for separate aggregation",
+"Deletes duplicate rows",
+"Creates indexes on columns"
+],
+"answerIndex": 1,
+"explanation": "GROUP BY groups rows by one or more columns so aggregates can be computed per group.",
+"category": "Grouping",
+"level": "Easy",
+"tags": ["GROUP BY", "grouping", "aggregation"]
+},
+{
+"question": "In a GROUP BY query, each unique value of the grouped column typically becomes what?",
+"options": [
+"A separate database",
+"One row in the result",
+"A hidden index",
+"A join condition"
+],
+"answerIndex": 1,
+"explanation": "Each group is represented as one output row.",
+"category": "Grouping",
+"level": "Easy",
+"tags": ["group result", "rows", "GROUP BY"]
+},
+{
+"question": "Why is GROUP BY useful in reporting?",
+"options": [
+"It makes queries less readable",
+"It allows summary metrics per category",
+"It prevents the use of WHERE",
+"It forces all output to be sorted"
+],
+"answerIndex": 1,
+"explanation": "GROUP BY is used to compute summaries for each category or partition.",
+"category": "Grouping",
+"level": "Easy",
+"tags": ["reporting", "categories", "summary"]
+},
+{
+"question": "Which query phase happens immediately before HAVING?",
+"options": [
+"SELECT",
+"WHERE",
+"GROUP BY",
+"ORDER BY"
+],
+"answerIndex": 2,
+"explanation": "Groups are formed first, then HAVING filters those groups.",
+"category": "Query Processing",
+"level": "Medium",
+"tags": ["GROUP BY", "HAVING", "query order"]
+},
+{
+"question": "Which clause is used to sort the final query result?",
+"options": [
+"GROUP BY",
+"HAVING",
+"ORDER BY",
+"WHERE"
+],
+"answerIndex": 2,
+"explanation": "ORDER BY sorts the final output of the query.",
+"category": "Sorting",
+"level": "Easy",
+"tags": ["ORDER BY", "sorting", "result"]
+},
+{
+"question": "What does DESC mean in an ORDER BY clause?",
+"options": [
+"Descending order",
+"Duplicate elimination",
+"Data expansion",
+"Direct selection"
+],
+"answerIndex": 0,
+"explanation": "DESC sorts values from highest to lowest or Z to A.",
+"category": "Sorting",
+"level": "Easy",
+"tags": ["DESC", "sorting", "order"]
+},
+{
+"question": "Which query correctly sorts members by join date from newest to oldest?",
+"options": [
+"SELECT * FROM members ORDER BY joindate DESC;",
+"SELECT * FROM members WHERE ORDER BY joindate;",
+"SELECT * FROM members GROUP BY joindate DESC;",
+"SELECT * FROM members HAVING joindate DESC;"
+],
+"answerIndex": 0,
+"explanation": "ORDER BY joindate DESC sorts dates in descending order.",
+"category": "Sorting",
+"level": "Easy",
+"tags": ["ORDER BY", "date", "DESC"]
+},
+{
+"question": "What is the purpose of CASE WHEN in SQL?",
+"options": [
+"To define joins between tables",
+"To create conditional logic inside a query",
+"To remove NULL values from tables",
+"To create indexes automatically"
+],
+"answerIndex": 1,
+"explanation": "CASE WHEN provides if/else style logic inside SQL statements.",
+"category": "Conditional Logic",
+"level": "Easy",
+"tags": ["CASE WHEN", "conditions", "SQL"]
+},
+{
+"question": "Which of the following best describes a CTE?",
+"options": [
+"A permanent table stored in the database",
+"A temporary named result set within one SQL statement",
+"A special index for aggregates",
+"A method for encrypting query results"
+],
+"answerIndex": 1,
+"explanation": "A CTE exists only inside a single SQL statement and acts like a named subquery.",
+"category": "CTEs",
+"level": "Easy",
+"tags": ["CTE", "temporary result", "WITH"]
+},
+{
+"question": "Which keyword introduces a CTE?",
+"options": [
+"WITH",
+"OVER",
+"PARTITION",
+"AS SELECT"
+],
+"answerIndex": 0,
+"explanation": "CTEs begin with the WITH keyword.",
+"category": "CTEs",
+"level": "Easy",
+"tags": ["WITH", "syntax", "CTE"]
+},
+{
+"question": "What is the main advantage of using CTEs?",
+"options": [
+"They always execute faster than subqueries",
+"They improve readability and structure",
+"They eliminate the need for joins",
+"They replace all aggregate functions"
+],
+"answerIndex": 1,
+"explanation": "CTEs help organize complex SQL into clearer named parts.",
+"category": "CTEs",
+"level": "Easy",
+"tags": ["readability", "structure", "CTE"]
+},
+{
+"question": "What is the required keyword for a recursive CTE?",
+"options": [
+"WITH LOOP",
+"WITH RECURSIVE",
+"RECURSIVE SELECT",
+"OVER RECURSIVE"
+],
+"answerIndex": 1,
+"explanation": "Recursive CTEs start with WITH RECURSIVE.",
+"category": "CTEs",
+"level": "Medium",
+"tags": ["recursive CTE", "WITH RECURSIVE", "hierarchy"]
+},
+{
+"question": "Which of the following is a key limitation of window functions?",
+"options": [
+"They require a join in every case",
+"They collapse rows into one output row per group",
+"They are computed in SELECT, so they cannot be filtered directly in WHERE",
+"They can only be used with text columns"
+],
+"answerIndex": 2,
+"explanation": "Window functions are computed after WHERE, so filtering them usually requires a subquery.",
+"category": "Window Functions",
+"level": "Medium",
+"tags": ["window functions", "WHERE", "subquery"]
+},
+{
+"question": "What does ROW_NUMBER() do?",
+"options": [
+"Counts only duplicate rows",
+"Assigns a unique row number to each row",
+"Ranks rows with gaps",
+"Computes a running average"
+],
+"answerIndex": 1,
+"explanation": "ROW_NUMBER() gives each row a unique sequential number.",
+"category": "Window Functions",
+"level": "Easy",
+"tags": ["ROW_NUMBER", "ranking", "window"]
+},
+{
+"question": "What does RANK() do?",
+"options": [
+"Assigns ranks with gaps when values tie",
+"Assigns unique numbers without gaps",
+"Sorts rows alphabetically",
+"Removes duplicates from the result"
+],
+"answerIndex": 0,
+"explanation": "RANK() gives tied rows the same rank and leaves gaps after ties.",
+"category": "Window Functions",
+"level": "Medium",
+"tags": ["RANK", "ties", "window"]
+},
+{
+"question": "What does DENSE_RANK() do?",
+"options": [
+"Assigns ranks with gaps after ties",
+"Assigns ranks without gaps after ties",
+"Counts all rows in the table",
+"Calculates the median of values"
+],
+"answerIndex": 1,
+"explanation": "DENSE_RANK() preserves consecutive ranking numbers without gaps.",
+"category": "Window Functions",
+"level": "Medium",
+"tags": ["DENSE_RANK", "ranking", "ties"]
+},
+{
+"question": "Which window function is best described as a running total in the lecture?",
+"options": [
+"SUM() OVER()",
+"COUNT() DISTINCT",
+"MIN() GROUP BY",
+"AVG() HAVING"
+],
+"answerIndex": 0,
+"explanation": "SUM() with OVER can produce running totals across ordered rows.",
+"category": "Window Functions",
+"level": "Medium",
+"tags": ["SUM OVER", "running total", "window"]
+},
+{
+"question": "Which window function can be used for a moving average or partitioned average?",
+"options": [
+"AVG() OVER()",
+"AVG() HAVING()",
+"AVG() GROUP()",
+"AVG() WHERE()"
+],
+"answerIndex": 0,
+"explanation": "AVG() OVER() computes averages across a window of rows.",
+"category": "Window Functions",
+"level": "Medium",
+"tags": ["AVG OVER", "moving average", "window"]
+},
+{
+"question": "Why does the lecture recommend using a subquery when filtering on RANK()?",
+"options": [
+"Because RANK() is computed before FROM",
+"Because RANK() is computed in SELECT and cannot be filtered in WHERE directly",
+"Because RANK() only works inside HAVING",
+"Because subqueries are mandatory for all SQL functions"
+],
+"answerIndex": 1,
+"explanation": "Window functions are produced after WHERE, so a subquery is needed to filter their results.",
+"category": "Window Functions",
+"level": "Hard",
+"tags": ["RANK", "subquery", "filtering"]
+},
+{
+"question": "Which statement about HAVING is correct?",
+"options": [
+"It filters rows before aggregation",
+"It filters groups after aggregation",
+"It can only be used without GROUP BY",
+"It replaces ORDER BY"
+],
+"answerIndex": 1,
+"explanation": "HAVING is evaluated after aggregation to filter grouped results.",
+"category": "Filtering",
+"level": "Easy",
+"tags": ["HAVING", "groups", "aggregation"]
+},
+{
+"question": "Which statement about WHERE is correct?",
+"options": [
+"It filters rows before grouping",
+"It filters groups after aggregation",
+"It can use aggregate values directly",
+"It is processed after SELECT"
+],
+"answerIndex": 0,
+"explanation": "WHERE is applied before GROUP BY and before aggregation.",
+"category": "Filtering",
+"level": "Easy",
+"tags": ["WHERE", "rows", "filtering"]
+},
+{
+"question": "Which query would be valid for counting bookings per member?",
+"options": [
+"SELECT memid, COUNT() FROM bookings GROUP BY memid;",
+"SELECT memid, COUNT() FROM bookings WHERE memid GROUP BY COUNT();",
+"SELECT COUNT() FROM bookings GROUP BY COUNT(memid);",
+"SELECT memid FROM bookings HAVING COUNT() GROUP BY memid;"
+],
+"answerIndex": 0,
+"explanation": "To count bookings per member, group by memid and use COUNT().",
+"category": "Grouping",
+"level": "Medium",
+"tags": ["COUNT", "GROUP BY", "members"]
+},
+{
+"question": "What is the effect of adding ORDER BY cnt DESC after a grouped query?",
+"options": [
+"It removes the aggregate column",
+"It sorts groups by the aggregate count in descending order",
+"It changes the meaning of GROUP BY",
+"It converts the query into a join"
+],
+"answerIndex": 1,
+"explanation": "ORDER BY can sort grouped results using the computed aggregate values.",
+"category": "Sorting",
+"level": "Medium",
+"tags": ["ORDER BY", "aggregate", "sorting"]
+},
+{
+"question": "What does the lecture say about aggregation queries and output size?",
+"options": [
+"They always return many rows",
+"They always return a single value unless grouped",
+"They always return a boolean",
+"They cannot be combined with joins"
+],
+"answerIndex": 1,
+"explanation": "A basic aggregation without grouping typically returns one result value.",
+"category": "Aggregation Basics",
+"level": "Easy",
+"tags": ["result", "aggregation", "rows"]
+},
+{
+"question": "Which function is specifically mentioned for median-like calculation?",
+"options": [
+"percentile_disc(0.5)",
+"median_rank()",
+"avg_median()",
+"quantile_mean()"
+],
+"answerIndex": 0,
+"explanation": "The lecture mentions percentile_disc(0.5) as a way to compute the median.",
+"category": "Aggregation Basics",
+"level": "Medium",
+"tags": ["median", "percentile_disc", "statistics"]
+},
+{
+"question": "What is a typical reason to use subqueries in aggregation workflows?",
+"options": [
+"To avoid writing SQL keywords",
+"To filter on computed values that are not available in WHERE",
+"To replace all joins with one clause",
+"To ensure every query returns exactly one row"
+],
+"answerIndex": 1,
+"explanation": "Subqueries are useful when filtering on values computed in SELECT or by aggregation.",
+"category": "Subqueries",
+"level": "Medium",
+"tags": ["subquery", "computed values", "filtering"]
+},
+{
+"question": "What is the main reason to use LEFT JOIN in the example counting bookings per member?",
+"options": [
+"To exclude members without bookings",
+"To preserve rows from the left table even when there is no match",
+"To force an inner join",
+"To sort the rows by booking count"
+],
+"answerIndex": 1,
+"explanation": "LEFT JOIN keeps rows from the left side even if the right table has no matching row.",
+"category": "Joins and Aggregation",
+"level": "Medium",
+"tags": ["LEFT JOIN", "null preservation", "aggregation"]
+},
+{
+"question": "Which clause is evaluated before GROUP BY according to the lecture?",
+"options": [
+"HAVING",
+"ORDER BY",
+"WHERE",
+"SELECT"
+],
+"answerIndex": 2,
+"explanation": "WHERE runs before grouping and can remove rows early.",
+"category": "Query Processing",
+"level": "Medium",
+"tags": ["WHERE", "GROUP BY", "processing order"]
+},
+{
+"question": "Which clause is evaluated after SELECT in the standard processing order shown?",
+"options": [
+"ORDER BY",
+"WHERE",
+"GROUP BY",
+"FROM"
+],
+"answerIndex": 0,
+"explanation": "ORDER BY is applied after the SELECT list is computed.",
+"category": "Query Processing",
+"level": "Medium",
+"tags": ["ORDER BY", "SELECT", "query order"]
+},
+{
+"question": "What does the term 'partition' most closely mean in the lecture context?",
+"options": [
+"Splitting data into categories for separate aggregation",
+"Deleting rows from a table",
+"Joining all tables in the database",
+"Changing the data type of a column"
+],
+"answerIndex": 0,
+"explanation": "Partitions are categories or subsets of data used for grouped analysis.",
+"category": "Aggregation Basics",
+"level": "Medium",
+"tags": ["partition", "categories", "aggregation"]
+},
+{
+"question": "Which query element is responsible for combining multiple conditions into a single categorized result with branching logic?",
+"options": [
+"CASE WHEN",
+"HAVING",
+"LIMIT",
+"DISTINCT"
+],
+"answerIndex": 0,
+"explanation": "CASE WHEN lets you classify rows based on conditional rules.",
+"category": "Conditional Logic",
+"level": "Easy",
+"tags": ["CASE WHEN", "classification", "logic"]
+},
+{
+"question": "In a CASE expression, which clause provides the default output when no condition matches?",
+"options": [
+"WHEN",
+"ELSE",
+"THEN",
+"DEFAULT"
+],
+"answerIndex": 1,
+"explanation": "ELSE is the fallback branch if no WHEN condition is true.",
+"category": "Conditional Logic",
+"level": "Easy",
+"tags": ["CASE", "ELSE", "conditional"]
+},
+{
+"question": "What does the lecture imply about median and percentiles in aggregation?",
+"options": [
+"They are impossible in SQL",
+"They are examples of statistical aggregation beyond basic count and sum",
+"They can only be computed with GROUP BY and no functions",
+"They are the same as ORDER BY"
+],
+"answerIndex": 1,
+"explanation": "Median and percentiles are advanced statistical aggregations.",
+"category": "Aggregation Basics",
+"level": "Medium",
+"tags": ["median", "percentiles", "statistics"]
+},
+{
+"question": "Why might a query use a subquery alias such as mem_bookings?",
+"options": [
+"Because subqueries must have an alias to be treated as a table expression",
+"Because aliases replace the need for SELECT",
+"Because MySQL forbids subqueries without ORDER BY",
+"Because aliases are only needed for joins"
+],
+"answerIndex": 0,
+"explanation": "A subquery in the FROM clause needs an alias.",
+"category": "Subqueries",
+"level": "Medium",
+"tags": ["alias", "subquery", "FROM"]
+},
+{
+"question": "Which of the following best describes a window function compared with GROUP BY?",
+"options": [
+"Window functions collapse rows; GROUP BY preserves them",
+"Both always return exactly one row",
+"Window functions compute across related rows without collapsing the result set",
+"GROUP BY cannot use aggregates"
+],
+"answerIndex": 2,
+"explanation": "Window functions add calculations per row while keeping all rows visible.",
+"category": "Window Functions",
+"level": "Medium",
+"tags": ["window functions", "GROUP BY", "rows"]
+},
+{
+"question": "Which of the following is true about a query with COUNT() and GROUP BY memid?",
+"options": [
+"It returns one row for each member id present in the bookings table",
+"It returns one row for each booking date",
+"It must include HAVING",
+"It cannot include ORDER BY"
+],
+"answerIndex": 0,
+"explanation": "Grouping by memid creates one output row per member group.",
+"category": "Grouping",
+"level": "Medium",
+"tags": ["COUNT", "memid", "grouping"]
+},
+{
+"question": "Which SQL clause is most appropriate for limiting results after ordering if you only need the top 4 rows?",
+"options": [
+"LIMIT",
+"HAVING",
+"GROUP BY",
+"CASE"
+],
+"answerIndex": 0,
+"explanation": "LIMIT restricts the number of rows returned after sorting.",
+"category": "Sorting",
+"level": "Easy",
+"tags": ["LIMIT", "top N", "sorting"]
+},
+{
+"question": "What is one benefit of using CTEs over deeply nested subqueries?",
+"options": [
+"CTEs make queries harder to read",
+"CTEs can make complex logic easier to debug",
+"CTEs automatically improve all performance",
+"CTEs eliminate the need for SQL syntax"
+],
+"answerIndex": 1,
+"explanation": "CTEs improve readability and maintainability, especially for complex logic.",
+"category": "CTEs",
+"level": "Easy",
+"tags": ["CTE", "debugging", "readability"]
+},
+{
+"question": "Which of the following is a correct reason to use HAVING instead of WHERE?",
+"options": [
+"To filter on aggregate results like COUNT()",
+"To filter rows before joins",
+"To sort by date descending",
+"To define a CTE"
+],
+"answerIndex": 0,
+"explanation": "HAVING is used to filter conditions involving aggregates.",
+"category": "Filtering",
+"level": "Medium",
+"tags": ["HAVING", "COUNT", "aggregate filtering"]
+},
+{
+"question": "What is the role of OVER in a window function?",
+"options": [
+"It defines the window or set of rows the function operates on",
+"It turns a query into a subquery",
+"It forces grouping by all columns",
+"It filters rows before aggregation"
+],
+"answerIndex": 0,
+"explanation": "OVER specifies the window of rows used by the window function.",
+"category": "Window Functions",
+"level": "Medium",
+"tags": ["OVER", "window frame", "syntax"]
+},
+{
+"question": "Which function is best for ranking facilities by total bookings if ties should not create gaps?",
+"options": [
+"RANK()",
+"DENSE_RANK()",
+"ROW_NUMBER()",
+"COUNT()"
+],
+"answerIndex": 1,
+"explanation": "DENSE_RANK() ranks ties without gaps.",
+"category": "Window Functions",
+"level": "Medium",
+"tags": ["DENSE_RANK", "ties", "ranking"]
+},
+{
+"question": "What is one reason a query may require a subquery after a window function is computed?",
+"options": [
+"Window functions can only appear in FROM",
+"Filtering on window output usually requires an outer query",
+"Subqueries are mandatory for ORDER BY",
+"Aggregates cannot be used with window functions"
+],
+"answerIndex": 1,
+"explanation": "Since window functions are computed in SELECT, an outer query is often needed to filter them.",
+"category": "Window Functions",
+"level": "Hard",
+"tags": ["subquery", "window output", "filtering"]
+},
+{
+"question": "Which of the following is the best interpretation of a CTE chain with multiple definitions?",
+"options": [
+"Every CTE must be independent and cannot reference previous ones",
+"Later CTEs can reference earlier CTEs in the same WITH clause",
+"CTEs can only be used once in a database lifetime",
+"CTEs are identical to indexes"
+],
+"answerIndex": 1,
+"explanation": "In multiple CTEs, later definitions may depend on earlier ones.",
+"category": "CTEs",
+"level": "Medium",
+"tags": ["multiple CTEs", "dependency", "WITH"]
+},
+{
+"question": "What is the main purpose of the GROUP BY clause in an aggregation report?",
+"options": [
+"To create one summary per category",
+"To show every raw record separately",
+"To remove aggregate functions from the query",
+"To enforce a primary key"
+],
+"answerIndex": 0,
+"explanation": "GROUP BY produces per-category summaries.",
+"category": "Grouping",
+"level": "Easy",
+"tags": ["reporting", "GROUP BY", "summary"]
+},
+{
+"question": "Which query component is most likely to use an alias such as cnt?",
+"options": [
+"An aggregate expression like COUNT()",
+"A database user account",
+"A JOIN condition only",
+"A table constraint"
+],
+"answerIndex": 0,
+"explanation": "Aliases are commonly used to rename aggregate outputs for readability.",
+"category": "Aggregation Basics",
+"level": "Easy",
+"tags": ["alias", "COUNT", "output naming"]
+},
+{
+"question": "What does the lecture say about MySQL 8.0+ regarding window functions?",
+"options": [
+"They are unavailable before 5.0 only",
+"Window functions like RANK() are supported in MySQL 8.0+",
+"Window functions require CTEs in every case",
+"Window functions are identical to HAVING"
+],
+"answerIndex": 1,
+"explanation": "The lecture explicitly notes that RANK() requires MySQL 8.0 or higher.",
+"category": "Window Functions",
+"level": "Medium",
+"tags": ["MySQL 8.0", "RANK", "support"]
+},
+{
+"question": "Which of the following best describes a recursive CTE use case?",
+"options": [
+"Ranking rows by revenue",
+"Traversing hierarchical relationships",
+"Sorting by date",
+"Counting all rows in a table"
+],
+"answerIndex": 1,
+"explanation": "Recursive CTEs are used for hierarchical or repeated parent-child relationships.",
+"category": "CTEs",
+"level": "Medium",
+"tags": ["recursive CTE", "hierarchy", "relationships"]
+},
+{
+"question": "What is the primary difference between RANK() and ROW_NUMBER()?",
+"options": [
+"ROW_NUMBER() can handle ties, RANK() cannot",
+"RANK() can assign the same rank to ties, ROW_NUMBER() cannot",
+"Both always produce identical outputs",
+"ROW_NUMBER() is only for text columns"
+],
+"answerIndex": 1,
+"explanation": "RANK() gives ties the same number, while ROW_NUMBER() always produces unique numbers.",
+"category": "Window Functions",
+"level": "Medium",
+"tags": ["RANK", "ROW_NUMBER", "ties"]
+},
+{
+"question": "Which of the following is a good reason to use LIMIT in older MySQL versions?",
+"options": [
+"To rank ties with gaps",
+"To retrieve only the top N results after ordering",
+"To define a recursive CTE",
+"To filter aggregate groups before grouping"
+],
+"answerIndex": 1,
+"explanation": "LIMIT is useful to restrict the output to the top N rows after sorting.",
+"category": "Sorting",
+"level": "Medium",
+"tags": ["LIMIT", "top N", "MySQL"]
+},
+{
+"question": "Which of the following is true about EXPLAIN?",
+"options": [
+"It executes the query and updates rows",
+"It shows the query execution plan",
+"It is used to define a CTE",
+"It replaces ORDER BY"
+],
+"answerIndex": 1,
+"explanation": "EXPLAIN is used to inspect how the database will execute a query.",
+"category": "Performance",
+"level": "Easy",
+"tags": ["EXPLAIN", "execution plan", "performance"]
+},
+{
+"question": "Why are indexes recommended for columns used in WHERE, JOIN, and GROUP BY?",
+"options": [
+"They guarantee correct results only",
+"They can improve query performance on filtered and grouped data",
+"They replace the need for SQL functions",
+"They automatically convert queries to CTEs"
+],
+"answerIndex": 1,
+"explanation": "Indexes help the database locate and process relevant rows more efficiently.",
+"category": "Performance",
+"level": "Medium",
+"tags": ["index", "performance", "GROUP BY"]
+},
+{
+"question": "What is a summary table used for?",
+"options": [
+"Storing frequently aggregated data for faster access",
+"Replacing the need for all database joins",
+"Encrypting SQL statements",
+"Showing only raw transactional rows"
+],
+"answerIndex": 0,
+"explanation": "Summary tables store precomputed aggregates to speed up repeated reporting.",
+"category": "Performance",
+"level": "Medium",
+"tags": ["summary table", "precomputed", "aggregation"]
+},
+{
+"question": "Which of the following best reflects the lecture's advice about HAVING?",
+"options": [
+"It should always be preferred over WHERE",
+"It is useful but can be more expensive because it filters after grouping",
+"It can only be used with window functions",
+"It is identical to LIMIT"
+],
+"answerIndex": 1,
+"explanation": "HAVING works after aggregation, so it may process more data than WHERE.",
+"category": "Performance",
+"level": "Medium",
+"tags": ["HAVING", "performance", "filtering"]
+},
+{
+"question": "Which of the following is a correct use of DISTINCT mentioned indirectly in the advanced report exercise?",
+"options": [
+"Counting unique members who used each facility",
+"Sorting rows by revenue",
+"Filtering groups before aggregation",
+"Creating recursive parent links"
+],
+"answerIndex": 0,
+"explanation": "DISTINCT is used to count unique entities, such as unique members per facility.",
+"category": "Aggregation Basics",
+"level": "Medium",
+"tags": ["DISTINCT", "unique count", "reporting"]
+},
+{
+"question": "What is the meaning of 'running total' in the context of window functions?",
+"options": [
+"A total computed only once for the entire table",
+"A cumulative total calculated across ordered rows",
+"A count of rows in a joined table",
+"A total that excludes all duplicates"
+],
+"answerIndex": 1,
+"explanation": "A running total accumulates values as rows are ordered through the window.",
+"category": "Window Functions",
+"level": "Medium",
+"tags": ["running total", "cumulative", "window"]
+},
+{
+"question": "Which type of query is most likely to need an outer query for filtering?",
+"options": [
+"A query with only literals",
+"A query using a window function result in WHERE",
+"A query that only selects a single column",
+"A query without joins or aggregates"
+],
+"answerIndex": 1,
+"explanation": "Window function results cannot usually be referenced directly in WHERE, so an outer query is needed.",
+"category": "Window Functions",
+"level": "Hard",
+"tags": ["outer query", "window functions", "filter"]
+},
+{
+"question": "Which statement about recursive CTEs is correct?",
+"options": [
+"They are used only for simple arithmetic",
+"They can process hierarchical structures step by step",
+"They cannot use UNION ALL",
+"They are limited to one row only"
+],
+"answerIndex": 1,
+"explanation": "Recursive CTEs are designed to traverse hierarchical or repeated relationships.",
+"category": "CTEs",
+"level": "Medium",
+"tags": ["recursive", "hierarchy", "UNION ALL"]
+},
+{
+"question": "What does the lecture suggest about newer SQL features such as CTEs and window functions?",
+"options": [
+"They are always supported in every SQL engine version",
+"They may require newer database versions",
+"They cannot be combined with aggregation",
+"They only work in SELECT * queries"
+],
+"answerIndex": 1,
+"explanation": "The lecture notes version requirements for features like CTEs and window functions.",
+"category": "SQL Features and Versions",
+"level": "Medium",
+"tags": ["version", "CTE", "window functions"]
+},
+{
+"question": "Which of the following best describes the role of ORDER BY in a grouped query?",
+"options": [
+"It determines how groups are formed",
+"It sorts the final grouped result",
+"It computes the aggregates",
+"It replaces HAVING"
+],
+"answerIndex": 1,
+"explanation": "ORDER BY sorts the output after grouping and aggregation are complete.",
+"category": "Sorting",
+"level": "Medium",
+"tags": ["ORDER BY", "grouped result", "sorting"]
+},
+{
+"question": "What is the main advantage of using aliases for aggregate outputs?",
+"options": [
+"They make the output easier to read and reference",
+"They eliminate the need for GROUP BY",
+"They improve recursive query depth",
+"They force the query to use HAVING"
+],
+"answerIndex": 0,
+"explanation": "Aliases provide readable names for computed columns such as counts or totals.",
+"category": "Aggregation Basics",
+"level": "Easy",
+"tags": ["alias", "readability", "aggregate output"]
+},
+{
+"question": "Which of the following is a likely exam-style reason to choose a CTE over a subquery?",
+"options": [
+"The CTE is always faster",
+"The logic is complex and should be broken into named steps",
+"The CTE avoids the need for any joins",
+"The CTE can only return one row"
+],
+"answerIndex": 1,
+"explanation": "CTEs improve clarity when a query has multiple logical stages.",
+"category": "CTEs",
+"level": "Medium",
+"tags": ["CTE", "complex query", "readability"]
+},
+{
+"question": "What does the lecture imply about GROUP BY and one-row aggregation results?",
+"options": [
+"GROUP BY always increases the number of columns",
+"Without GROUP BY, many aggregates return one result row",
+"GROUP BY is used only for sorting",
+"Aggregates cannot be used with WHERE"
+],
+"answerIndex": 1,
+"explanation": "Without grouping, an aggregate typically returns a single summary value.",
+"category": "Aggregation Basics",
+"level": "Medium",
+"tags": ["GROUP BY", "single result", "aggregate"]
+},
+{
+"question": "Which SQL feature is the best fit for assigning ranks to rows while keeping all rows in the result?",
+"options": [
+"GROUP BY",
+"Window functions",
+"DROP TABLE",
+"UNION DISTINCT"
+],
+"answerIndex": 1,
+"explanation": "Window functions operate across rows without collapsing them.",
+"category": "Window Functions",
+"level": "Easy",
+"tags": ["ranking", "window functions", "rows"]
+}
+]
+}
