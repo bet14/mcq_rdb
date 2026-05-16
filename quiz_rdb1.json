@@ -1,0 +1,1057 @@
+{
+"title": "Relational Database Lecture 1",
+"subtitle": "Quiz",
+"totalQuestions": 75,
+"questions": [
+{
+"question": "What is the main goal of a database system?",
+"options": [
+"To store and query data efficiently",
+"To compile source code",
+"To render web pages",
+"To replace all programming languages"
+],
+"answerIndex": 0,
+"explanation": "A database system is designed to store, organize, and query data efficiently.",
+"category": "Database Fundamentals",
+"level": "Easy",
+"tags": ["database", "purpose", "fundamentals"]
+},
+{
+"question": "Which statement best describes database transparency for the user?",
+"options": [
+"The user must know the exact file storage layout",
+"The internal implementation is hidden from the user",
+"Every query must specify disk blocks manually",
+"The user can only access data through spreadsheets"
+],
+"answerIndex": 1,
+"explanation": "Database transparency means users do not need to know internal storage or implementation details.",
+"category": "Database Fundamentals",
+"level": "Easy",
+"tags": ["transparency", "abstraction", "database"]
+},
+{
+"question": "Which three categories of SQL-related languages were introduced?",
+"options": [
+"DDL, DML, DCL",
+"HTML, CSS, JavaScript",
+"GET, POST, PUT",
+"API, ORM, CLI"
+],
+"answerIndex": 0,
+"explanation": "The three categories are Data Definition Language, Data Manipulation Language, and Data Control Language.",
+"category": "SQL Languages",
+"level": "Easy",
+"tags": ["DDL", "DML", "DCL"]
+},
+{
+"question": "What does DDL stand for?",
+"options": [
+"Data Delivery Logic",
+"Data Definition Language",
+"Database Design Library",
+"Data Deployment Layer"
+],
+"answerIndex": 1,
+"explanation": "DDL stands for Data Definition Language.",
+"category": "SQL Languages",
+"level": "Easy",
+"tags": ["DDL", "definition", "sql"]
+},
+{
+"question": "Which operation is part of DDL?",
+"options": [
+"SELECT",
+"INSERT",
+"CREATE",
+"GRANT"
+],
+"answerIndex": 2,
+"explanation": "CREATE is a DDL command because it defines database objects.",
+"category": "SQL Languages",
+"level": "Easy",
+"tags": ["DDL", "CREATE", "schema"]
+},
+{
+"question": "Which command removes all data from a table while keeping the table structure?",
+"options": [
+"DELETE",
+"DROP",
+"TRUNCATE",
+"ALTER"
+],
+"answerIndex": 2,
+"explanation": "TRUNCATE removes all rows but preserves the table definition.",
+"category": "SQL Commands",
+"level": "Easy",
+"tags": ["TRUNCATE", "table", "data removal"]
+},
+{
+"question": "What is the main effect of DDL operations?",
+"options": [
+"They change the schema",
+"They only retrieve rows",
+"They only manage permissions",
+"They encrypt stored values"
+],
+"answerIndex": 0,
+"explanation": "DDL is used to define and modify the database schema.",
+"category": "SQL Languages",
+"level": "Easy",
+"tags": ["DDL", "schema", "structure"]
+},
+{
+"question": "Which command is used to modify an existing table structure?",
+"options": [
+"ALTER",
+"SELECT",
+"REVOKE",
+"COMMIT"
+],
+"answerIndex": 0,
+"explanation": "ALTER is used to change columns, constraints, or other table structures.",
+"category": "SQL Commands",
+"level": "Easy",
+"tags": ["ALTER", "DDL", "table structure"]
+},
+{
+"question": "Which of the following is a DML command?",
+"options": [
+"DROP",
+"INSERT",
+"CREATE",
+"ALTER"
+],
+"answerIndex": 1,
+"explanation": "INSERT is a DML command because it changes table data.",
+"category": "SQL Languages",
+"level": "Easy",
+"tags": ["DML", "INSERT", "data"]
+},
+{
+"question": "Which command is used to retrieve data from tables?",
+"options": [
+"SELECT",
+"GRANT",
+"DROP",
+"TRUNCATE"
+],
+"answerIndex": 0,
+"explanation": "SELECT is the primary command for reading data from tables.",
+"category": "SQL Commands",
+"level": "Easy",
+"tags": ["SELECT", "query", "retrieval"]
+},
+{
+"question": "Which statement best describes DML?",
+"options": [
+"It defines database structure",
+"It controls access permissions",
+"It works with data inside tables",
+"It only creates indexes"
+],
+"answerIndex": 2,
+"explanation": "DML is used to manipulate data stored in tables.",
+"category": "SQL Languages",
+"level": "Easy",
+"tags": ["DML", "data manipulation", "tables"]
+},
+{
+"question": "Which command is not part of DML?",
+"options": [
+"UPDATE",
+"DELETE",
+"SELECT",
+"GRANT"
+],
+"answerIndex": 3,
+"explanation": "GRANT belongs to DCL, not DML.",
+"category": "SQL Languages",
+"level": "Easy",
+"tags": ["DCL", "GRANT", "SQL"]
+},
+{
+"question": "What does DCL stand for?",
+"options": [
+"Data Control Language",
+"Database Calculation Logic",
+"Data Cleaning Language",
+"Dynamic Command Layer"
+],
+"answerIndex": 0,
+"explanation": "DCL stands for Data Control Language.",
+"category": "SQL Languages",
+"level": "Easy",
+"tags": ["DCL", "permissions", "sql"]
+},
+{
+"question": "Which command gives users access rights?",
+"options": [
+"REVOKE",
+"GRANT",
+"ALTER",
+"INSERT"
+],
+"answerIndex": 1,
+"explanation": "GRANT is used to give permissions to users.",
+"category": "Access Control",
+"level": "Easy",
+"tags": ["GRANT", "permissions", "DCL"]
+},
+{
+"question": "Which command removes access rights from users?",
+"options": [
+"REVOKE",
+"SELECT",
+"CREATE",
+"TRUNCATE"
+],
+"answerIndex": 0,
+"explanation": "REVOKE is used to remove previously granted permissions.",
+"category": "Access Control",
+"level": "Easy",
+"tags": ["REVOKE", "permissions", "DCL"]
+},
+{
+"question": "Why is the principle of minimum necessary permissions important?",
+"options": [
+"It increases query speed automatically",
+"It prevents accidental and unauthorized actions",
+"It removes the need for backups",
+"It replaces foreign keys"
+],
+"answerIndex": 1,
+"explanation": "Limiting permissions reduces security risk and prevents unintended actions.",
+"category": "Security",
+"level": "Easy",
+"tags": ["security", "least privilege", "permissions"]
+},
+{
+"question": "In relational database terminology, a table is also called a:",
+"options": [
+"Tuple",
+"Relation",
+"Attribute",
+"Viewport"
+],
+"answerIndex": 1,
+"explanation": "A table corresponds to a relation in relational database terminology.",
+"category": "Relational Model",
+"level": "Easy",
+"tags": ["relation", "table", "relational model"]
+},
+{
+"question": "In a table, a column is also known as:",
+"options": [
+"Tuple",
+"Attribute",
+"Relation",
+"Transaction"
+],
+"answerIndex": 1,
+"explanation": "A column is called an attribute.",
+"category": "Relational Model",
+"level": "Easy",
+"tags": ["attribute", "column", "relational model"]
+},
+{
+"question": "In a table, a row is called a:",
+"options": [
+"Tuple",
+"Schema",
+"Constraint",
+"Index"
+],
+"answerIndex": 0,
+"explanation": "A row is called a tuple.",
+"category": "Relational Model",
+"level": "Easy",
+"tags": ["tuple", "row", "relational model"]
+},
+{
+"question": "Each row in a table represents:",
+"options": [
+"A database role",
+"One instance of the entity",
+"A SQL command",
+"A foreign key automatically"
+],
+"answerIndex": 1,
+"explanation": "Each row corresponds to one instance of the entity being modeled.",
+"category": "Relational Model",
+"level": "Easy",
+"tags": ["entity", "tuple", "row"]
+},
+{
+"question": "Which type best fits a fixed-length character string?",
+"options": [
+"TEXT",
+"VARCHAR(n)",
+"CHAR(n)",
+"INT"
+],
+"answerIndex": 2,
+"explanation": "CHAR(n) stores fixed-length character strings.",
+"category": "Data Types",
+"level": "Easy",
+"tags": ["CHAR", "string", "fixed length"]
+},
+{
+"question": "Which type is most appropriate for variable-length character data?",
+"options": [
+"CHAR(n)",
+"VARCHAR(n)",
+"DATE",
+"FLOAT(n)"
+],
+"answerIndex": 1,
+"explanation": "VARCHAR(n) stores variable-length strings.",
+"category": "Data Types",
+"level": "Easy",
+"tags": ["VARCHAR", "string", "variable length"]
+},
+{
+"question": "Which type is described as an infinite-length character string in the lesson?",
+"options": [
+"TEXT",
+"CHAR(n)",
+"INT",
+"TIME"
+],
+"answerIndex": 0,
+"explanation": "TEXT is used for very long text content.",
+"category": "Data Types",
+"level": "Easy",
+"tags": ["TEXT", "string", "large text"]
+},
+{
+"question": "Which type stores integer numeric values?",
+"options": [
+"FLOAT(n)",
+"DATE",
+"INT",
+"VARCHAR(n)"
+],
+"answerIndex": 2,
+"explanation": "INT is used for integer values.",
+"category": "Data Types",
+"level": "Easy",
+"tags": ["INT", "numeric", "integer"]
+},
+{
+"question": "Which type stores floating-point numeric values?",
+"options": [
+"FLOAT(n)",
+"CHAR(n)",
+"TEXT",
+"DATE"
+],
+"answerIndex": 0,
+"explanation": "FLOAT is used for approximate decimal numbers.",
+"category": "Data Types",
+"level": "Easy",
+"tags": ["FLOAT", "numeric", "decimal"]
+},
+{
+"question": "Which type stores the date only?",
+"options": [
+"TIME",
+"DATETIME",
+"DATE",
+"TIMESTAMP"
+],
+"answerIndex": 2,
+"explanation": "DATE stores only the date portion.",
+"category": "Data Types",
+"level": "Easy",
+"tags": ["DATE", "calendar", "data types"]
+},
+{
+"question": "Which type stores the time only?",
+"options": [
+"DATE",
+"TIME",
+"TIMESTAMP",
+"JSON"
+],
+"answerIndex": 1,
+"explanation": "TIME stores only the time portion.",
+"category": "Data Types",
+"level": "Easy",
+"tags": ["TIME", "clock", "data types"]
+},
+{
+"question": "Which type is commonly used for audit trails and event logging?",
+"options": [
+"TIMESTAMP",
+"CHAR(n)",
+"BLOB",
+"TEXT"
+],
+"answerIndex": 0,
+"explanation": "TIMESTAMP is ideal for recording when events occur.",
+"category": "Data Types",
+"level": "Easy",
+"tags": ["TIMESTAMP", "logging", "audit"]
+},
+{
+"question": "Which type is described as storing date and time with a wider range?",
+"options": [
+"DATE",
+"DATETIME",
+"TIME",
+"INT"
+],
+"answerIndex": 1,
+"explanation": "DATETIME stores both date and time and supports a wider range.",
+"category": "Data Types",
+"level": "Easy",
+"tags": ["DATETIME", "date time", "data types"]
+},
+{
+"question": "Which type is suitable for flexible schemas and API responses?",
+"options": [
+"JSON",
+"CHAR(n)",
+"DATE",
+"FLOAT(n)"
+],
+"answerIndex": 0,
+"explanation": "JSON is well suited to semi-structured and flexible data.",
+"category": "Data Types",
+"level": "Easy",
+"tags": ["JSON", "api", "semi-structured"]
+},
+{
+"question": "Which type is used for binary large objects such as images or files?",
+"options": [
+"TEXT",
+"BLOB",
+"VARCHAR(n)",
+"TIMESTAMP"
+],
+"answerIndex": 1,
+"explanation": "BLOB is used to store binary large objects.",
+"category": "Data Types",
+"level": "Easy",
+"tags": ["BLOB", "binary", "files"]
+},
+{
+"question": "What is the recommended best practice for storing files?",
+"options": [
+"Store every file directly in BLOB columns",
+"Store files on disk or cloud and keep references in the database",
+"Convert all files to CHAR(n)",
+"Store binary files inside DATE fields"
+],
+"answerIndex": 1,
+"explanation": "The lesson recommends storing files externally and keeping references in the database.",
+"category": "Design Best Practices",
+"level": "Easy",
+"tags": ["files", "storage", "best practice"]
+},
+{
+"question": "What is a primary key used for?",
+"options": [
+"Defining uniqueness for tuples",
+"Encrypting table rows",
+"Storing file paths only",
+"Replacing foreign keys"
+],
+"answerIndex": 0,
+"explanation": "A primary key uniquely identifies each row in a table.",
+"category": "Keys",
+"level": "Easy",
+"tags": ["primary key", "uniqueness", "tuple"]
+},
+{
+"question": "What is a foreign key used for?",
+"options": [
+"Defining external data linked to the current tuple",
+"Defining the table name",
+"Storing only numeric values",
+"Creating indexes automatically in all databases"
+],
+"answerIndex": 0,
+"explanation": "A foreign key links data in one table to data in another table.",
+"category": "Keys",
+"level": "Easy",
+"tags": ["foreign key", "relationships", "keys"]
+},
+{
+"question": "Which statement best describes the control function of databases?",
+"options": [
+"It only changes the table design",
+"It ensures data are correctly modified and integrity is preserved",
+"It only retrieves records",
+"It converts text into images"
+],
+"answerIndex": 1,
+"explanation": "The control function helps maintain correct updates and preserve integrity.",
+"category": "Database Functions",
+"level": "Easy",
+"tags": ["control", "integrity", "database functions"]
+},
+{
+"question": "Why is normalization used?",
+"options": [
+"To increase redundancy",
+"To reduce anomalies and redundancy",
+"To eliminate the need for keys",
+"To replace SQL with JSON"
+],
+"answerIndex": 1,
+"explanation": "Normalization reduces redundancy and helps avoid anomalies.",
+"category": "Normalization",
+"level": "Easy",
+"tags": ["normalization", "redundancy", "anomalies"]
+},
+{
+"question": "Which problem is caused by redundancy in a database?",
+"options": [
+"Update anomalies",
+"Faster integrity checks",
+"Automatic indexing",
+"Reduced storage usage"
+],
+"answerIndex": 0,
+"explanation": "Redundancy can lead to update anomalies and inconsistent data.",
+"category": "Normalization",
+"level": "Easy",
+"tags": ["redundancy", "update anomalies", "normalization"]
+},
+{
+"question": "What is the meaning of “atomic values” in 1NF?",
+"options": [
+"Values must be decomposed into many fields",
+"Each cell should contain a single indivisible value",
+"Every row must have exactly one column",
+"All values must be numeric"
+],
+"answerIndex": 1,
+"explanation": "In 1NF, each cell must contain only one indivisible value.",
+"category": "Normalization",
+"level": "Easy",
+"tags": ["1NF", "atomicity", "normal forms"]
+},
+{
+"question": "Which normal form removes multi-valued attributes?",
+"options": [
+"1NF",
+"2NF",
+"3NF",
+"BCNF"
+],
+"answerIndex": 0,
+"explanation": "1NF removes repeating groups and non-atomic values.",
+"category": "Normalization",
+"level": "Easy",
+"tags": ["1NF", "multi-valued", "normal forms"]
+},
+{
+"question": "Which normal form removes partial dependencies?",
+"options": [
+"1NF",
+"2NF",
+"3NF",
+"BCNF"
+],
+"answerIndex": 1,
+"explanation": "2NF removes partial dependency on a composite key.",
+"category": "Normalization",
+"level": "Easy",
+"tags": ["2NF", "partial dependency", "normal forms"]
+},
+{
+"question": "Which normal form removes transitive dependencies?",
+"options": [
+"1NF",
+"2NF",
+"3NF",
+"UNF"
+],
+"answerIndex": 2,
+"explanation": "3NF removes transitive dependencies.",
+"category": "Normalization",
+"level": "Easy",
+"tags": ["3NF", "transitive dependency", "normal forms"]
+},
+{
+"question": "In BCNF, what is required?",
+"options": [
+"Every determinant is a candidate key",
+"Every table must have only one column",
+"Every attribute must be numeric",
+"Every foreign key must be nullable"
+],
+"answerIndex": 0,
+"explanation": "BCNF requires every determinant to be a candidate key.",
+"category": "Normalization",
+"level": "Medium",
+"tags": ["BCNF", "determinant", "candidate key"]
+},
+{
+"question": "Which normal form is commonly considered a practical balance?",
+"options": [
+"1NF",
+"2NF",
+"3NF",
+"UNF"
+],
+"answerIndex": 2,
+"explanation": "3NF is often a practical balance between normalization and simplicity.",
+"category": "Normalization",
+"level": "Easy",
+"tags": ["3NF", "balance", "design"]
+},
+{
+"question": "Which relationship type matches “one record matches exactly one”?",
+"options": [
+"One-to-one",
+"One-to-many",
+"Many-to-many",
+"Zero-to-many"
+],
+"answerIndex": 0,
+"explanation": "One-to-one means each record on one side matches exactly one record on the other.",
+"category": "Relationships",
+"level": "Easy",
+"tags": ["one-to-one", "relationship", "cardinality"]
+},
+{
+"question": "Which relationship type is represented by Customer → Orders?",
+"options": [
+"One-to-one",
+"One-to-many",
+"Many-to-many",
+"Recursive relationship only"
+],
+"answerIndex": 1,
+"explanation": "A customer can have multiple orders, which is a one-to-many relationship.",
+"category": "Relationships",
+"level": "Easy",
+"tags": ["one-to-many", "customer", "orders"]
+},
+{
+"question": "Which relationship type typically requires a junction table?",
+"options": [
+"One-to-one",
+"One-to-many",
+"Many-to-many",
+"Self-join only"
+],
+"answerIndex": 2,
+"explanation": "Many-to-many relationships are commonly implemented with a junction table.",
+"category": "Relationships",
+"level": "Easy",
+"tags": ["many-to-many", "junction table", "relationships"]
+},
+{
+"question": "What is the role of a foreign key in a one-to-many relationship?",
+"options": [
+"It is placed in the “many” table",
+"It is placed only in the “one” table",
+"It removes the need for a primary key",
+"It stores the table’s metadata"
+],
+"answerIndex": 0,
+"explanation": "The foreign key is stored in the many-side table to reference the one-side table.",
+"category": "Relationships",
+"level": "Easy",
+"tags": ["foreign key", "one-to-many", "many side"]
+},
+{
+"question": "Which is an ACID property?",
+"options": [
+"Aggregation",
+"Consistency",
+"Compression",
+"Duplication"
+],
+"answerIndex": 1,
+"explanation": "Consistency is one of the ACID properties.",
+"category": "Transactions",
+"level": "Easy",
+"tags": ["ACID", "consistency", "transactions"]
+},
+{
+"question": "What does Atomicity mean?",
+"options": [
+"Transactions may partially succeed",
+"All or nothing",
+"Data must be stored in JSON",
+"Queries are always read-only"
+],
+"answerIndex": 1,
+"explanation": "Atomicity means a transaction either completes fully or not at all.",
+"category": "Transactions",
+"level": "Easy",
+"tags": ["atomicity", "ACID", "transactions"]
+},
+{
+"question": "What does Consistency mean in ACID?",
+"options": [
+"Concurrent users cannot access the database",
+"Valid state transitions and constraints are respected",
+"Data is automatically duplicated",
+"All queries must be SELECT"
+],
+"answerIndex": 1,
+"explanation": "Consistency ensures that integrity rules and constraints remain valid.",
+"category": "Transactions",
+"level": "Easy",
+"tags": ["consistency", "ACID", "integrity"]
+},
+{
+"question": "What does Isolation mean in ACID?",
+"options": [
+"Transactions never commit",
+"Concurrent operations do not interfere",
+"Data is always deleted after use",
+"Tables cannot have foreign keys"
+],
+"answerIndex": 1,
+"explanation": "Isolation prevents concurrent transactions from interfering with each other.",
+"category": "Transactions",
+"level": "Easy",
+"tags": ["isolation", "ACID", "concurrency"]
+},
+{
+"question": "What does Durability mean in ACID?",
+"options": [
+"Data survives system crash",
+"Data is temporary by design",
+"Only cached data is available",
+"Table structure is not stored"
+],
+"answerIndex": 0,
+"explanation": "Durability ensures committed data persists even after a crash.",
+"category": "Transactions",
+"level": "Easy",
+"tags": ["durability", "ACID", "persistence"]
+},
+{
+"question": "Which statement best defines a schema?",
+"options": [
+"The actual row contents only",
+"The database structure",
+"A permission list only",
+"A file format for images"
+],
+"answerIndex": 1,
+"explanation": "A schema describes the structure of the database.",
+"category": "Database Design",
+"level": "Easy",
+"tags": ["schema", "structure", "database design"]
+},
+{
+"question": "Which command is most associated with defining tables, views, and databases?",
+"options": [
+"CREATE",
+"SELECT",
+"REVOKE",
+"UPDATE"
+],
+"answerIndex": 0,
+"explanation": "CREATE is used to define new database objects.",
+"category": "SQL Commands",
+"level": "Easy",
+"tags": ["CREATE", "DDL", "objects"]
+},
+{
+"question": "Which command is used to delete databases, tables, or views?",
+"options": [
+"TRUNCATE",
+"DROP",
+"ALTER",
+"INSERT"
+],
+"answerIndex": 1,
+"explanation": "DROP removes the database object itself.",
+"category": "SQL Commands",
+"level": "Easy",
+"tags": ["DROP", "DDL", "delete object"]
+},
+{
+"question": "Which command adds new records to a table?",
+"options": [
+"UPDATE",
+"INSERT",
+"DELETE",
+"CREATE"
+],
+"answerIndex": 1,
+"explanation": "INSERT is used to add new rows into a table.",
+"category": "SQL Commands",
+"level": "Easy",
+"tags": ["INSERT", "rows", "DML"]
+},
+{
+"question": "Which command modifies existing records?",
+"options": [
+"UPDATE",
+"INSERT",
+"SELECT",
+"GRANT"
+],
+"answerIndex": 0,
+"explanation": "UPDATE changes values in existing rows.",
+"category": "SQL Commands",
+"level": "Easy",
+"tags": ["UPDATE", "modify", "DML"]
+},
+{
+"question": "Which command removes records from a table?",
+"options": [
+"DROP",
+"DELETE",
+"ALTER",
+"REVOKE"
+],
+"answerIndex": 1,
+"explanation": "DELETE removes rows from a table.",
+"category": "SQL Commands",
+"level": "Easy",
+"tags": ["DELETE", "rows", "DML"]
+},
+{
+"question": "Why is DECIMAL preferred over FLOAT for money?",
+"options": [
+"FLOAT stores exact monetary values better",
+"DECIMAL avoids precision issues common with FLOAT",
+"FLOAT is always slower than all other types",
+"DECIMAL can only store integers"
+],
+"answerIndex": 1,
+"explanation": "DECIMAL is preferred for money because it avoids floating-point precision errors.",
+"category": "Data Types",
+"level": "Easy",
+"tags": ["DECIMAL", "money", "precision"]
+},
+{
+"question": "Which data type is suggested for fixed lists such as status or priority?",
+"options": [
+"ENUM",
+"TEXT",
+"BLOB",
+"DATE"
+],
+"answerIndex": 0,
+"explanation": "ENUM is suitable for a predefined set of values such as status or priority.",
+"category": "Data Types",
+"level": "Easy",
+"tags": ["ENUM", "fixed list", "data types"]
+},
+{
+"question": "Which best describes a one-to-one relationship implementation?",
+"options": [
+"Foreign key in either table",
+"Junction table required",
+"Foreign key only in the child table with duplicates",
+"No keys are needed"
+],
+"answerIndex": 0,
+"explanation": "A one-to-one relationship can be implemented with a foreign key in either table.",
+"category": "Relationships",
+"level": "Medium",
+"tags": ["one-to-one", "foreign key", "implementation"]
+},
+{
+"question": "Which of the following is a reason to use normalization?",
+"options": [
+"To make updates less error-prone",
+"To maximize repeated values",
+"To remove all relationships",
+"To make all columns text-based"
+],
+"answerIndex": 0,
+"explanation": "Normalization helps reduce anomalies and makes updates safer.",
+"category": "Normalization",
+"level": "Easy",
+"tags": ["normalization", "updates", "design"]
+},
+{
+"question": "Which statement about databases versus files is most accurate?",
+"options": [
+"Files always provide stronger concurrency control than databases",
+"Databases support ACID, integrity constraints, and query optimization",
+"Files are always better for complex queries",
+"Databases do not support permissions"
+],
+"answerIndex": 1,
+"explanation": "Databases provide ACID properties, integrity checks, and optimized querying.",
+"category": "Database Systems",
+"level": "Easy",
+"tags": ["databases", "files", "comparison"]
+},
+{
+"question": "Which is a common advantage of using files instead of databases?",
+"options": [
+"Automatic integrity checks",
+"Simple, portable storage",
+"Strong transaction isolation",
+"Built-in relational constraints"
+],
+"answerIndex": 1,
+"explanation": "Files are often simpler and more portable than database systems.",
+"category": "Database Systems",
+"level": "Easy",
+"tags": ["files", "storage", "advantage"]
+},
+{
+"question": "Which database feature supports saved data surviving a system crash?",
+"options": [
+"Atomicity",
+"Durability",
+"Isolation",
+"Normalization"
+],
+"answerIndex": 1,
+"explanation": "Durability ensures committed data remains stored after failures.",
+"category": "Transactions",
+"level": "Easy",
+"tags": ["durability", "crash recovery", "ACID"]
+},
+{
+"question": "Which statement best describes SELECT in the lesson context?",
+"options": [
+"It defines schema structure",
+"It is the most common daily database operation",
+"It manages user permissions",
+"It deletes all rows in a table"
+],
+"answerIndex": 1,
+"explanation": "SELECT is emphasized as the most common daily database operation.",
+"category": "SQL Commands",
+"level": "Easy",
+"tags": ["SELECT", "query", "common operation"]
+},
+{
+"question": "Which command would you use to remove every row from a table while preserving its definition?",
+"options": [
+"DROP TABLE",
+"TRUNCATE TABLE",
+"DELETE DATABASE",
+"ALTER TABLE"
+],
+"answerIndex": 1,
+"explanation": "TRUNCATE TABLE removes all rows but keeps the table definition.",
+"category": "SQL Commands",
+"level": "Easy",
+"tags": ["TRUNCATE", "table", "rows"]
+},
+{
+"question": "Which of the following best matches the concept of a tuple?",
+"options": [
+"A row in a table",
+"A column in a table",
+"A database server",
+"A permission rule"
+],
+"answerIndex": 0,
+"explanation": "A tuple is another name for a row.",
+"category": "Relational Model",
+"level": "Easy",
+"tags": ["tuple", "row", "table"]
+},
+{
+"question": "Which statement is true about DDL and DML?",
+"options": [
+"DDL changes structure, DML changes data",
+"DDL changes permissions, DML changes schema",
+"DDL and DML are identical",
+"DML is only for creating tables"
+],
+"answerIndex": 0,
+"explanation": "DDL defines structure while DML manipulates data.",
+"category": "SQL Languages",
+"level": "Easy",
+"tags": ["DDL", "DML", "difference"]
+},
+{
+"question": "Which command set is most associated with data access control?",
+"options": [
+"CREATE and ALTER",
+"SELECT and INSERT",
+"GRANT and REVOKE",
+"DROP and TRUNCATE"
+],
+"answerIndex": 2,
+"explanation": "GRANT and REVOKE are the core access control commands.",
+"category": "Access Control",
+"level": "Easy",
+"tags": ["GRANT", "REVOKE", "DCL"]
+},
+{
+"question": "In relational design, what does a foreign key typically reference?",
+"options": [
+"Another table’s primary key",
+"A view definition",
+"A stored procedure",
+"A column comment only"
+],
+"answerIndex": 0,
+"explanation": "A foreign key usually references a primary key or unique key in another table.",
+"category": "Keys",
+"level": "Easy",
+"tags": ["foreign key", "primary key", "reference"]
+},
+{
+"question": "Which statement best describes the role of the database in application systems?",
+"options": [
+"It is used across several applications",
+"It is limited to one application only",
+"It replaces the operating system",
+"It is only useful for writing code documentation"
+],
+"answerIndex": 0,
+"explanation": "Databases are typically shared resources used by multiple applications.",
+"category": "Database Systems",
+"level": "Easy",
+"tags": ["applications", "shared resource", "database"]
+},
+{
+"question": "Which is the best reason to prefer VARCHAR over TEXT when possible?",
+"options": [
+"VARCHAR is always unlimited in length",
+"VARCHAR is suitable when the maximum length is known",
+"TEXT is always indexed better",
+"TEXT cannot store letters"
+],
+"answerIndex": 1,
+"explanation": "Use VARCHAR when the maximum length is known and bounded.",
+"category": "Data Types",
+"level": "Easy",
+"tags": ["VARCHAR", "TEXT", "string"]
+},
+{
+"question": "Which is the strongest interpretation of “store and query data”?",
+"options": [
+"Databases are mainly for image editing",
+"Databases provide persistent storage plus retrieval capabilities",
+"Databases only compute statistics",
+"Databases only manage permissions"
+],
+"answerIndex": 1,
+"explanation": "The core database function is persistent storage and efficient retrieval.",
+"category": "Database Fundamentals",
+"level": "Easy",
+"tags": ["storage", "query", "database"]
+},
+{
+"question": "Which command would you most likely use to create a new database?",
+"options": [
+"CREATE DATABASE",
+"INSERT DATABASE",
+"SELECT DATABASE",
+"GRANT DATABASE"
+],
+"answerIndex": 0,
+"explanation": "CREATE DATABASE is the standard DDL command for creating a database.",
+"category": "SQL Commands",
+"level": "Easy",
+"tags": ["CREATE DATABASE", "DDL", "database"]
+}
+]
+}

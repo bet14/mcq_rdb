@@ -1,0 +1,931 @@
+{
+"title": "Database Modeling and MySQL DDL Review Quiz",
+"subtitle": "ER modeling, crow foot notation, constraints, and table design",
+"totalQuestions": 60,
+"questions": [
+{
+"question": "What is the main purpose of the Entity-Relationship (ER) model in database design?",
+"options": [
+"To execute SQL queries faster",
+"To describe data structure and relationships conceptually",
+"To replace the need for foreign keys",
+"To store data in JSON format"
+],
+"answerIndex": 1,
+"explanation": "The ER model is used for conceptual database design to represent entities, attributes, and relationships.",
+"category": "ER Modeling",
+"level": "Easy",
+"tags": ["ER model", "conceptual design", "database basics"]
+},
+{
+"question": "Which notation is commonly used to represent ER relationships in practice?",
+"options": [
+"Bachman notation",
+"Crow Foot notation",
+"Relational algebra notation",
+"Binary tree notation"
+],
+"answerIndex": 1,
+"explanation": "Crow Foot notation is widely used to represent cardinalities and relationships visually.",
+"category": "ER Modeling",
+"level": "Easy",
+"tags": ["Crow Foot", "notation", "ERD"]
+},
+{
+"question": "In ER modeling, what best describes an entity?",
+"options": [
+"A SQL trigger",
+"A property of a table",
+"An object or concept such as Student or Course",
+"A database index"
+],
+"answerIndex": 2,
+"explanation": "Entities represent real-world objects or concepts that are stored as tables.",
+"category": "ER Modeling",
+"level": "Easy",
+"tags": ["entity", "table", "conceptual model"]
+},
+{
+"question": "What is an attribute in ER modeling?",
+"options": [
+"A relationship between two tables",
+"A property of an entity",
+"A foreign key constraint",
+"A database engine"
+],
+"answerIndex": 1,
+"explanation": "Attributes are the descriptive properties of entities, such as name or address.",
+"category": "ER Modeling",
+"level": "Easy",
+"tags": ["attribute", "column", "ER model"]
+},
+{
+"question": "What does cardinality describe in a relationship?",
+"options": [
+"The physical storage size of a table",
+"The number of instances participating in the relationship",
+"The number of indexes on a table",
+"The order of columns in a schema"
+],
+"answerIndex": 1,
+"explanation": "Cardinality indicates how many entities can be related, such as one-to-many or many-to-many.",
+"category": "ER Modeling",
+"level": "Easy",
+"tags": ["cardinality", "relationships", "ERD"]
+},
+{
+"question": "Which of the following is a one-to-many relationship?",
+"options": [
+"One student enrolls in one course only",
+"Many students belong to many departments",
+"One doctor schedules many appointments",
+"One bill is linked to many bills"
+],
+"answerIndex": 2,
+"explanation": "One doctor can schedule many appointments, while each appointment belongs to one doctor.",
+"category": "Cardinality",
+"level": "Medium",
+"tags": ["one-to-many", "cardinality", "appointment system"]
+},
+{
+"question": "In crow foot notation, what does a circle typically indicate?",
+"options": [
+"Mandatory exactly one",
+"Optional participation",
+"Primary key",
+"Many-to-many relationship"
+],
+"answerIndex": 1,
+"explanation": "A circle indicates that participation is optional, meaning zero is allowed.",
+"category": "Crow Foot Notation",
+"level": "Medium",
+"tags": ["optional", "crow foot", "symbols"]
+},
+{
+"question": "In crow foot notation, what does a crow's foot symbol usually represent?",
+"options": [
+"Exactly one",
+"Optional zero",
+"Many",
+"Primary key"
+],
+"answerIndex": 2,
+"explanation": "The crow's foot symbol represents the 'many' side of a relationship.",
+"category": "Crow Foot Notation",
+"level": "Easy",
+"tags": ["many", "crow foot", "cardinality"]
+},
+{
+"question": "What relationship type usually requires a junction table?",
+"options": [
+"One-to-one",
+"One-to-many",
+"Many-to-many",
+"Self-reference only"
+],
+"answerIndex": 2,
+"explanation": "Many-to-many relationships are typically implemented with a junction table.",
+"category": "Database Design",
+"level": "Medium",
+"tags": ["junction table", "many-to-many", "relational design"]
+},
+{
+"question": "Why is the Entity-Relationship model useful before writing SQL tables?",
+"options": [
+"It avoids the need for constraints",
+"It helps identify entities, relationships, and keys before implementation",
+"It automatically creates tables",
+"It removes the need for normalization"
+],
+"answerIndex": 1,
+"explanation": "ER modeling supports clear logical design before implementing physical tables.",
+"category": "Database Design Process",
+"level": "Easy",
+"tags": ["ERD", "logical design", "implementation"]
+},
+{
+"question": "Which of the following best describes a primary key?",
+"options": [
+"A column used only for sorting",
+"A column or set of columns that uniquely identifies a row",
+"A column that may contain duplicate values",
+"A column that links to another table but does not need uniqueness"
+],
+"answerIndex": 1,
+"explanation": "A primary key uniquely identifies each row and prevents duplicates.",
+"category": "Constraints",
+"level": "Easy",
+"tags": ["primary key", "uniqueness", "constraints"]
+},
+{
+"question": "What is the main purpose of a foreign key?",
+"options": [
+"To ensure column values are unique",
+"To reference a row in another table and preserve integrity",
+"To create an index automatically",
+"To store computed values"
+],
+"answerIndex": 1,
+"explanation": "A foreign key links to a referenced table and enforces referential integrity.",
+"category": "Constraints",
+"level": "Easy",
+"tags": ["foreign key", "referential integrity", "relationships"]
+},
+{
+"question": "Which SQL statement is used to add a new column to an existing table?",
+"options": [
+"CREATE COLUMN",
+"ALTER TABLE ... ADD COLUMN",
+"UPDATE TABLE ... NEW COLUMN",
+"INSERT COLUMN"
+],
+"answerIndex": 1,
+"explanation": "In MySQL, ALTER TABLE ... ADD COLUMN is used to modify the table structure.",
+"category": "MySQL DDL",
+"level": "Easy",
+"tags": ["ALTER TABLE", "ADD COLUMN", "DDL"]
+},
+{
+"question": "Which SQL statement removes a column from an existing table in MySQL?",
+"options": [
+"ALTER TABLE ... DROP COLUMN",
+"DELETE COLUMN",
+"REMOVE COLUMN",
+"DROP TABLE COLUMN"
+],
+"answerIndex": 0,
+"explanation": "MySQL uses ALTER TABLE ... DROP COLUMN to remove a column.",
+"category": "MySQL DDL",
+"level": "Easy",
+"tags": ["ALTER TABLE", "DROP COLUMN", "DDL"]
+},
+{
+"question": "What does ON DELETE SET NULL do in a foreign key constraint?",
+"options": [
+"Deletes the child rows automatically",
+"Prevents deleting the parent row",
+"Sets the foreign key column to NULL in child rows",
+"Copies the parent key into the child row"
+],
+"answerIndex": 2,
+"explanation": "If the parent row is deleted, the referencing foreign key becomes NULL when SET NULL is used.",
+"category": "Referential Integrity",
+"level": "Medium",
+"tags": ["ON DELETE", "SET NULL", "foreign key"]
+},
+{
+"question": "What does ON UPDATE CASCADE do in a foreign key relationship?",
+"options": [
+"Deletes child rows when the parent changes",
+"Updates child key values automatically when the parent key changes",
+"Prevents any update in the parent table",
+"Sets child key values to NULL"
+],
+"answerIndex": 1,
+"explanation": "CASCADE propagates changes in the referenced key to the child table.",
+"category": "Referential Integrity",
+"level": "Medium",
+"tags": ["CASCADE", "foreign key", "update rule"]
+},
+{
+"question": "Why are primary keys important in relational databases?",
+"options": [
+"They make every column unique",
+"They ensure row uniqueness and support reliable updates and references",
+"They automatically encrypt data",
+"They replace the need for indexes"
+],
+"answerIndex": 1,
+"explanation": "Primary keys uniquely identify tuples and help maintain data integrity.",
+"category": "Constraints",
+"level": "Easy",
+"tags": ["primary key", "uniqueness", "integrity"]
+},
+{
+"question": "Which MySQL storage engine is recommended for most transactional databases?",
+"options": [
+"MyISAM",
+"MEMORY",
+"InnoDB",
+"CSV"
+],
+"answerIndex": 2,
+"explanation": "InnoDB supports ACID transactions and foreign keys, making it the standard choice.",
+"category": "Storage Engines",
+"level": "Easy",
+"tags": ["InnoDB", "transactions", "MySQL"]
+},
+{
+"question": "Which storage engine stores data in RAM?",
+"options": [
+"InnoDB",
+"MyISAM",
+"MEMORY",
+"Archive"
+],
+"answerIndex": 2,
+"explanation": "The MEMORY engine stores table data in memory for temporary or fast-access use cases.",
+"category": "Storage Engines",
+"level": "Easy",
+"tags": ["MEMORY", "RAM", "MySQL engine"]
+},
+{
+"question": "Which storage engine is described as having table-level locking and fast reads?",
+"options": [
+"InnoDB",
+"MyISAM",
+"MEMORY",
+"NDB"
+],
+"answerIndex": 1,
+"explanation": "MyISAM is known for table-level locking and being read-oriented.",
+"category": "Storage Engines",
+"level": "Medium",
+"tags": ["MyISAM", "locking", "reads"]
+},
+{
+"question": "What is the best reason to avoid storing calculated totals as the only source of truth?",
+"options": [
+"Calculated totals cannot be indexed",
+"They can become inconsistent if source data changes",
+"They require too many foreign keys",
+"They are not compatible with SQL"
+],
+"answerIndex": 1,
+"explanation": "Derived values should usually be computed from raw data to avoid inconsistency.",
+"category": "Database Design Mistakes",
+"level": "Medium",
+"tags": ["derived data", "consistency", "design"]
+},
+{
+"question": "Why is storing comma-separated values in one column usually a bad design choice?",
+"options": [
+"It uses too much disk space only",
+"It breaks atomicity and makes querying harder",
+"It creates automatic foreign keys",
+"It improves normalization"
+],
+"answerIndex": 1,
+"explanation": "Comma-separated lists violate normalization and make searching and updating difficult.",
+"category": "Normalization",
+"level": "Medium",
+"tags": ["atomicity", "normalization", "multi-valued attribute"]
+},
+{
+"question": "Which design choice is preferred for a user identifier in most systems?",
+"options": [
+"A meaningful natural key like email",
+"A surrogate key like auto-increment user_id",
+"A calculated hash of name and birthdate",
+"A text field with duplicate values allowed"
+],
+"answerIndex": 1,
+"explanation": "Surrogate keys are stable even if business data such as email changes.",
+"category": "Database Design",
+"level": "Medium",
+"tags": ["surrogate key", "natural key", "primary key"]
+},
+{
+"question": "What is the main advantage of using NOT NULL on important columns?",
+"options": [
+"It allows duplicate rows",
+"It prevents missing required values",
+"It replaces foreign keys",
+"It makes a table temporary"
+],
+"answerIndex": 1,
+"explanation": "NOT NULL ensures required data must be provided for the column.",
+"category": "Constraints",
+"level": "Easy",
+"tags": ["NOT NULL", "data quality", "constraints"]
+},
+{
+"question": "Which of the following is most likely a many-to-many relationship in an e-commerce system?",
+"options": [
+"Customer to Order",
+"Order to Order_Item",
+"Product to Category",
+"Order to Customer"
+],
+"answerIndex": 2,
+"explanation": "A product can belong to many categories and a category can contain many products.",
+"category": "Cardinality",
+"level": "Medium",
+"tags": ["many-to-many", "junction table", "e-commerce"]
+},
+{
+"question": "Which table best represents the relationship between Products and Categories?",
+"options": [
+"Customers",
+"Orders",
+"Product_Categories",
+"Payments"
+],
+"answerIndex": 2,
+"explanation": "A junction table is needed to implement the many-to-many relation.",
+"category": "Database Design",
+"level": "Easy",
+"tags": ["junction table", "categories", "products"]
+},
+{
+"question": "In a self-referencing foreign key, what is the referenced row usually in the same table?",
+"options": [
+"A child table row",
+"An external database row",
+"A row in the same table",
+"A view"
+],
+"answerIndex": 2,
+"explanation": "A self-referencing foreign key points back to another row in the same table.",
+"category": "Advanced Modeling",
+"level": "Medium",
+"tags": ["self-reference", "foreign key", "categories"]
+},
+{
+"question": "Which entity in the appointment system generates exactly one bill?",
+"options": [
+"Doctor",
+"Patient",
+"Appointment",
+"Insurance Company"
+],
+"answerIndex": 2,
+"explanation": "The relationship states that each appointment generates exactly one bill.",
+"category": "ER Modeling",
+"level": "Medium",
+"tags": ["appointment system", "bill", "relationship"]
+},
+{
+"question": "How many doctors can be linked to one appointment in the appointment system?",
+"options": [
+"Zero",
+"Exactly one",
+"Many",
+"Exactly two"
+],
+"answerIndex": 1,
+"explanation": "Each appointment is scheduled with exactly one doctor.",
+"category": "Cardinality",
+"level": "Easy",
+"tags": ["appointment", "doctor", "one-to-many"]
+},
+{
+"question": "How many appointments can one patient schedule according to the exercise description?",
+"options": [
+"Exactly one",
+"Zero or one",
+"One or more",
+"Exactly one bill"
+],
+"answerIndex": 2,
+"explanation": "The patient can schedule one or more appointments.",
+"category": "Cardinality",
+"level": "Easy",
+"tags": ["patient", "appointments", "cardinality"]
+},
+{
+"question": "What does the statement 'a bill can be outstanding' imply?",
+"options": [
+"The bill must already be fully paid",
+"The bill may have no payments yet",
+"The bill cannot be linked to payments",
+"The bill must be deleted after creation"
+],
+"answerIndex": 1,
+"explanation": "An outstanding bill means there may be nothing paid on it yet.",
+"category": "Business Rules",
+"level": "Medium",
+"tags": ["bill status", "payments", "business rule"]
+},
+{
+"question": "Which referential action is best if a doctor may be deleted but appointments should remain?",
+"options": [
+"ON DELETE CASCADE",
+"ON DELETE SET NULL",
+"ON DELETE RESTRICT",
+"ON DELETE REPLACE"
+],
+"answerIndex": 1,
+"explanation": "SET NULL preserves the appointment while removing the reference to the deleted doctor.",
+"category": "Referential Integrity",
+"level": "Medium",
+"tags": ["set null", "doctor", "appointment"]
+},
+{
+"question": "Which SQL clause belongs in a CREATE TABLE statement to choose the storage engine?",
+"options": [
+"USING InnoDB",
+"ENGINE=InnoDB",
+"FORMAT=InnoDB",
+"TYPE=InnoDB"
+],
+"answerIndex": 1,
+"explanation": "MySQL uses ENGINE=InnoDB to specify the storage engine.",
+"category": "MySQL DDL",
+"level": "Easy",
+"tags": ["CREATE TABLE", "ENGINE", "InnoDB"]
+},
+{
+"question": "What is the main goal of normalization?",
+"options": [
+"To duplicate data across tables",
+"To reduce redundancy and improve consistency",
+"To eliminate all foreign keys",
+"To make every table have only one column"
+],
+"answerIndex": 1,
+"explanation": "Normalization organizes data to minimize duplication and anomalies.",
+"category": "Normalization",
+"level": "Easy",
+"tags": ["normalization", "redundancy", "anomalies"]
+},
+{
+"question": "What is the first step in the database design process listed in the notes?",
+"options": [
+"Implementation",
+"Testing and optimization",
+"Requirements analysis",
+"Normalization"
+],
+"answerIndex": 2,
+"explanation": "Database design starts by identifying what data needs to be stored.",
+"category": "Database Design Process",
+"level": "Easy",
+"tags": ["requirements", "design process", "analysis"]
+},
+{
+"question": "Which step converts an ER diagram into table schemas?",
+"options": [
+"Conceptual design",
+"Logical design",
+"Physical design",
+"Testing"
+],
+"answerIndex": 1,
+"explanation": "Logical design transforms the conceptual model into relations and schemas.",
+"category": "Database Design Process",
+"level": "Medium",
+"tags": ["logical design", "ERD", "schema"]
+},
+{
+"question": "What is the role of physical design in the database design process?",
+"options": [
+"Selecting data types and storage details",
+"Drawing crow foot symbols",
+"Creating user interface screens",
+"Writing marketing requirements"
+],
+"answerIndex": 0,
+"explanation": "Physical design chooses data types, storage, and implementation details.",
+"category": "Database Design Process",
+"level": "Medium",
+"tags": ["physical design", "data types", "storage"]
+},
+{
+"question": "Which of the following is a typical advantage of InnoDB over MyISAM?",
+"options": [
+"No support for foreign keys",
+"ACID compliance and foreign key support",
+"Table-level locking only",
+"No transaction support"
+],
+"answerIndex": 1,
+"explanation": "InnoDB is transactional and supports foreign keys and row-level locking.",
+"category": "Storage Engines",
+"level": "Medium",
+"tags": ["InnoDB", "ACID", "foreign keys"]
+},
+{
+"question": "What is the best reason to use a junction table in relational design?",
+"options": [
+"To store calculated totals",
+"To convert a many-to-many relationship into two one-to-many relationships",
+"To remove the need for keys",
+"To store temporary cache values"
+],
+"answerIndex": 1,
+"explanation": "A junction table resolves many-to-many relationships into implementable relations.",
+"category": "Database Design",
+"level": "Medium",
+"tags": ["junction table", "many-to-many", "relational model"]
+},
+{
+"question": "Which of the following best describes a UNIQUE constraint?",
+"options": [
+"It allows duplicate values but no NULLs",
+"It guarantees uniqueness of a column or column set",
+"It creates a foreign key automatically",
+"It deletes rows with duplicate values"
+],
+"answerIndex": 1,
+"explanation": "A UNIQUE constraint prevents duplicate values in the constrained column(s).",
+"category": "Constraints",
+"level": "Medium",
+"tags": ["UNIQUE", "constraints", "data integrity"]
+},
+{
+"question": "Why can email be a poor choice as a primary key in a user table?",
+"options": [
+"It cannot be indexed",
+"It is always too long",
+"It may change over time",
+"It cannot contain letters"
+],
+"answerIndex": 2,
+"explanation": "Primary keys should be stable, and email addresses can change.",
+"category": "Database Design",
+"level": "Medium",
+"tags": ["primary key", "email", "stability"]
+},
+{
+"question": "Which relationship is typically implemented with a foreign key in the 'many' table?",
+"options": [
+"One-to-one",
+"One-to-many",
+"Many-to-many directly without a junction table",
+"No relationship"
+],
+"answerIndex": 1,
+"explanation": "In one-to-many relationships, the foreign key usually resides in the many-side table.",
+"category": "Cardinality",
+"level": "Medium",
+"tags": ["foreign key", "one-to-many", "schema"]
+},
+{
+"question": "What happens if a foreign key references a deleted row and no referential action allows it?",
+"options": [
+"The database accepts it silently",
+"Referential integrity is violated",
+"The row is automatically archived",
+"The key becomes a primary key"
+],
+"answerIndex": 1,
+"explanation": "Foreign key references must remain valid to preserve referential integrity.",
+"category": "Referential Integrity",
+"level": "Medium",
+"tags": ["integrity", "foreign key", "delete rule"]
+},
+{
+"question": "Which column is most likely to be a foreign key in the Orders table of an e-commerce system?",
+"options": [
+"order_date",
+"total_amount",
+"customer_id",
+"status"
+],
+"answerIndex": 2,
+"explanation": "customer_id links Orders to Customers and is therefore a foreign key.",
+"category": "Database Design",
+"level": "Easy",
+"tags": ["orders", "customers", "foreign key"]
+},
+{
+"question": "Which of the following is the best reason to use CHECK constraints?",
+"options": [
+"To enforce domain rules such as valid price or status values",
+"To create many-to-many relationships",
+"To rename tables automatically",
+"To replace primary keys"
+],
+"answerIndex": 0,
+"explanation": "CHECK constraints enforce valid values according to business rules.",
+"category": "Constraints",
+"level": "Medium",
+"tags": ["CHECK", "validation", "business rules"]
+},
+{
+"question": "Which of the following is an example of a junction table in an online bookstore?",
+"options": [
+"Books",
+"Authors",
+"Book_Authors",
+"Reviews"
+],
+"answerIndex": 2,
+"explanation": "Book_Authors connects books and authors in a many-to-many relationship.",
+"category": "Database Design",
+"level": "Medium",
+"tags": ["junction table", "book-author", "many-to-many"]
+},
+{
+"question": "Why is an order item table needed in an order system?",
+"options": [
+"To store customer passwords",
+"To represent which products belong to each order and in what quantity",
+"To replace the orders table",
+"To avoid using primary keys"
+],
+"answerIndex": 1,
+"explanation": "Order_Items stores the line-level details of products in each order.",
+"category": "Database Design",
+"level": "Easy",
+"tags": ["order_items", "orders", "line items"]
+},
+{
+"question": "Which statement best describes a many-to-many relationship between students and sections?",
+"options": [
+"Each student can enroll in many sections and each section can have many students",
+"Each student can enroll in only one section",
+"Each section belongs to exactly one student",
+"Each student must have one section and one section only"
+],
+"answerIndex": 0,
+"explanation": "Many students can enroll in many sections, requiring a junction table.",
+"category": "Cardinality",
+"level": "Medium",
+"tags": ["students", "sections", "many-to-many"]
+},
+{
+"question": "What is the main risk of over-normalization?",
+"options": [
+"Too many duplicated rows",
+"Excessive joins and reduced query performance",
+"Loss of all constraints",
+"Data becomes unsearchable"
+],
+"answerIndex": 1,
+"explanation": "Over-normalization can make queries complex and slower due to many joins.",
+"category": "Normalization",
+"level": "Medium",
+"tags": ["over-normalization", "performance", "joins"]
+},
+{
+"question": "Which statement is most accurate about designing a social media database?",
+"options": [
+"Likes and follows should always be stored as text fields",
+"Users, posts, comments, and hashtags are likely separate entities with relationships",
+"Only one table is needed for all social media data",
+"Hashtags cannot be modeled relationally"
+],
+"answerIndex": 1,
+"explanation": "Social media systems are naturally modeled with multiple entities and relationships.",
+"category": "Advanced Modeling",
+"level": "Medium",
+"tags": ["social media", "entities", "relationships"]
+},
+{
+"question": "When a patient is insured, what does the model say about their insurance company relationship?",
+"options": [
+"A patient can carry insurance with multiple companies simultaneously",
+"A patient can only carry insurance with one company",
+"Insurance companies cannot have many patients",
+"The relationship is always many-to-many"
+],
+"answerIndex": 1,
+"explanation": "The exercise states that an insured patient can only carry insurance with one company.",
+"category": "ER Modeling",
+"level": "Medium",
+"tags": ["insurance", "cardinality", "patient system"]
+},
+{
+"question": "Which SQL command family is used for schema changes such as adding or removing columns?",
+"options": [
+"DML",
+"DCL",
+"DDL",
+"TCL"
+],
+"answerIndex": 2,
+"explanation": "DDL statements modify the structure of database objects.",
+"category": "MySQL DDL",
+"level": "Easy",
+"tags": ["DDL", "schema changes", "ALTER TABLE"]
+},
+{
+"question": "What does the term referential integrity primarily protect against?",
+"options": [
+"Duplicate column names",
+"Broken links between related tables",
+"Missing indexes only",
+"Incorrect date formats only"
+],
+"answerIndex": 1,
+"explanation": "Referential integrity ensures that foreign key references always point to valid rows.",
+"category": "Referential Integrity",
+"level": "Easy",
+"tags": ["integrity", "foreign key", "relational database"]
+},
+{
+"question": "Which of the following best represents a relationship where a course belongs to exactly one section?",
+"options": [
+"One-to-many from section to course",
+"Many-to-many from course to section",
+"One-to-one from section to course",
+"Optional many-to-one from course to section"
+],
+"answerIndex": 2,
+"explanation": "If each course belongs to exactly one section and each section maps to one course, it is one-to-one.",
+"category": "Cardinality",
+"level": "Hard",
+"tags": ["one-to-one", "course", "section"]
+},
+{
+"question": "Why might an appointment date alone be insufficient as a primary key in the appointment system?",
+"options": [
+"Dates cannot be stored in MySQL",
+"More than one appointment can occur on the same date",
+"Dates cannot be indexed",
+"Dates are always NULL"
+],
+"answerIndex": 1,
+"explanation": "A date alone is not guaranteed to be unique because many appointments can share the same date.",
+"category": "Database Design",
+"level": "Hard",
+"tags": ["primary key", "appointment", "uniqueness"]
+},
+{
+"question": "What is the best implementation choice for a product-category many-to-many relation?",
+"options": [
+"Store category names as comma-separated text in Products",
+"Create a Product_Categories table with foreign keys to both tables",
+"Duplicate product rows for each category",
+"Use a trigger instead of a table"
+],
+"answerIndex": 1,
+"explanation": "A junction table is the standard relational implementation for many-to-many relationships.",
+"category": "Database Design",
+"level": "Medium",
+"tags": ["junction table", "products", "categories"]
+},
+{
+"question": "Which of the following best explains why tables should have clearly defined primary keys before adding foreign keys?",
+"options": [
+"Foreign keys do not work without auto-increment",
+"Referenced rows must be uniquely identifiable",
+"Primary keys are only decorative",
+"Foreign keys can reference any random column"
+],
+"answerIndex": 1,
+"explanation": "Foreign keys reference primary or candidate keys so the target row is unique.",
+"category": "Constraints",
+"level": "Hard",
+"tags": ["primary key", "foreign key", "schema design"]
+},
+{
+"question": "Which referential rule is most appropriate when deleting a product that is already part of historical order items?",
+"options": [
+"CASCADE delete all orders",
+"RESTRICT deletion of the product",
+"SET NULL on every order item without exception",
+"Drop the Orders table"
+],
+"answerIndex": 1,
+"explanation": "RESTRICT prevents deletion when dependent historical data must be preserved.",
+"category": "Referential Integrity",
+"level": "Hard",
+"tags": ["restrict", "product", "order history"]
+},
+{
+"question": "What is the strongest justification for using ON DELETE CASCADE on a child table?",
+"options": [
+"You want child rows removed automatically when the parent is removed",
+"You want to preserve orphaned child rows",
+"You want to convert a foreign key into a primary key",
+"You want to allow duplicate parent rows"
+],
+"answerIndex": 0,
+"explanation": "CASCADE is appropriate when child rows should not exist without the parent.",
+"category": "Referential Integrity",
+"level": "Medium",
+"tags": ["cascade", "delete rule", "child rows"]
+},
+{
+"question": "Which stage of database design is most closely associated with creating the actual database objects in SQL?",
+"options": [
+"Conceptual design",
+"Logical design",
+"Implementation",
+"Requirements analysis"
+],
+"answerIndex": 2,
+"explanation": "Implementation is where the database is actually created using SQL.",
+"category": "Database Design Process",
+"level": "Easy",
+"tags": ["implementation", "SQL", "database lifecycle"]
+},
+{
+"question": "What does the phrase 'good design upfront saves hours of refactoring later' emphasize?",
+"options": [
+"Database design is unnecessary if the project is small",
+"Early modeling reduces later structural changes and errors",
+"Normalization should be skipped entirely",
+"Constraints should be added only after deployment"
+],
+"answerIndex": 1,
+"explanation": "Careful early design helps avoid expensive schema corrections later.",
+"category": "Database Design Process",
+"level": "Medium",
+"tags": ["design process", "refactoring", "planning"]
+},
+{
+"question": "Which of these is a valid reason to use DEFAULT in a table definition?",
+"options": [
+"To enforce a unique key",
+"To provide a value when none is supplied",
+"To create a foreign key",
+"To remove NULL values from all existing rows instantly"
+],
+"answerIndex": 1,
+"explanation": "DEFAULT supplies a fallback value when no explicit value is inserted.",
+"category": "Constraints",
+"level": "Medium",
+"tags": ["DEFAULT", "insert", "constraints"]
+},
+{
+"question": "Which relationship is most likely one-to-many in a university database?",
+"options": [
+"Students to Courses through enrollment",
+"Professors to Office Rooms if each office has many professors",
+"Courses to Departments if each course belongs to one department",
+"Students to Professors through teaching"
+],
+"answerIndex": 2,
+"explanation": "A course usually belongs to one department, while a department can have many courses.",
+"category": "Cardinality",
+"level": "Medium",
+"tags": ["university", "one-to-many", "department"]
+},
+{
+"question": "What is the correct interpretation of a patient making many payments but a single payment belonging to only one patient?",
+"options": [
+"Many-to-many",
+"One-to-many from patient to payment",
+"One-to-one",
+"Many-to-one from patient to bill"
+],
+"answerIndex": 1,
+"explanation": "One patient can create many payments, so the relationship is one-to-many.",
+"category": "Cardinality",
+"level": "Easy",
+"tags": ["patient", "payments", "one-to-many"]
+},
+{
+"question": "Which of the following is the best example of a relational anti-pattern mentioned in the notes?",
+"options": [
+"Using surrogate keys",
+"Storing image_url instead of a BLOB",
+"Using VARCHAR(255) for everything",
+"Adding a foreign key to a junction table"
+],
+"answerIndex": 2,
+"explanation": "Using VARCHAR(255) for every column is called out as lazy design.",
+"category": "Database Design Mistakes",
+"level": "Medium",
+"tags": ["data types", "design mistake", "schema quality"]
+},
+{
+"question": "Which of the following is the best answer when asked to draw a conceptual model for a bookstore?",
+"options": [
+"List only tables and ignore relationships",
+"Identify entities, attributes, primary keys, and relationships",
+"Write only SELECT queries",
+"Use only one giant table for all data"
+],
+"answerIndex": 1,
+"explanation": "Conceptual modeling focuses on entities, attributes, keys, and relationships.",
+"category": "Advanced Modeling",
+"level": "Easy",
+"tags": ["bookstore", "conceptual model", "ERD"]
+}
+]
+}
